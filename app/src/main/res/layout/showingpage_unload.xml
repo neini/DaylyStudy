@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/unload_img"
+        android:layout_width="400px"
+        android:layout_height="300px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="230px"
+        android:src="@mipmap/wunai" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/unload_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20px"
+        android:text="小主，你还没有登录应用，去登录"
+        android:textColor="#999999"
+        android:textSize="20px" />
+
+</com.zhy.autolayout.AutoRelativeLayout>

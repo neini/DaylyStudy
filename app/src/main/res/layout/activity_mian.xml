@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:background="#f5f5f5"
+        android:id="@+id/main_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="5px">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_pager"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="@color/bottom_text_color" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/category_pager"
+            android:gravity="center"
+            android:text="课程分类"
+            android:textColor="@color/bottom_text_color" />
+
+        <RadioButton
+            android:background="#f5f5f5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/crile_pager"
+            android:gravity="center"
+            android:text="圈子"
+            android:textColor="@color/bottom_text_color" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/mine_pager"
+            android:gravity="center"
+            android:text="我的"
+            android:textColor="@color/bottom_text_color" />
+    </RadioGroup>
+
+    <com.bwie.demo.daylystudy.view.LazyViewPager
+        android:id="@+id/main_lvp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_rg"></com.bwie.demo.daylystudy.view.LazyViewPager>
+</com.zhy.autolayout.AutoRelativeLayout>
