@@ -70,7 +70,7 @@ public class LazyViewPager extends ViewGroup {
 
     private static final boolean USE_CACHE = false;
     //设置默认加载的页数
-    private static final int DEFAULT_OFFSCREEN_PAGES = 0;
+    private static final int DEFAULT_OFFSCREEN_PAGES = 4;
 
     private static final int MAX_SETTLE_DURATION = 600;
 

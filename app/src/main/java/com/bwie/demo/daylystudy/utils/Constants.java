@@ -2,6 +2,9 @@ package com.bwie.demo.daylystudy.utils;
 
 public interface Constants {
 
+	//圈子中话题页面轮播图
+	public static String hot_viewPager = "http://www.meirixue.com/";
+	public static String hot_viewPager_arg = "api.php?c=circle&a=getCircleNamesIndexV2";
 	// 登录接口
 	String signIn = "http://www.meirixue.com/api.php?c=login&a=index";
 	// 注册接口获得短信的验证码

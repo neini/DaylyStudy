@@ -1,23 +1,29 @@
-package com.bwie.demo.daylystudy;
+package com.bwie.demo.daylystudy.app;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
+import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.base.BaseActivity;
 import com.bwie.demo.daylystudy.factoty.HomeFragmentFactoty;
 import com.bwie.demo.daylystudy.view.LazyViewPager;
-import com.zhy.autolayout.AutoLayoutActivity;
+
+import java.util.List;
+
+import static android.R.id.list;
 
 public class MainActivity extends BaseActivity {
 
     private LazyViewPager main_lvp;
     private RadioGroup main_rg;
+    private String[] homeList = {"首页", "课程", "圈子", "我的"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +41,7 @@ public class MainActivity extends BaseActivity {
         main_lvp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return HomeFragmentFactoty.getFragment(position);
+                return HomeFragmentFactoty.getFragment(homeList[position]);
             }
 
             @Override
@@ -76,6 +82,7 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
     //监听连续两次返回退出
     private long waitTime = 1200;
     private long touchTime = 0;

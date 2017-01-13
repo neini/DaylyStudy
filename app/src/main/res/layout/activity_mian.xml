@@ -2,16 +2,17 @@
 <com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <RadioGroup
-        android:background="#f5f5f5"
         android:id="@+id/main_rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="#f5f5f5"
         android:orientation="horizontal"
-        android:padding="5px">
+        android:padding="10px">
 
         <RadioButton
             android:layout_width="0dp"
@@ -34,10 +35,10 @@
             android:textColor="@color/bottom_text_color" />
 
         <RadioButton
-            android:background="#f5f5f5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#f5f5f5"
             android:button="@null"
             android:drawableTop="@drawable/crile_pager"
             android:gravity="center"
