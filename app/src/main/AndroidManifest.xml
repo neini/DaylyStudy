@@ -31,6 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".base.BaseActivity" />
+        <activity android:name=".app.SortActivity"></activity>
         <activity android:name=".app.ExamapleActivity"></activity>
     </application>
 

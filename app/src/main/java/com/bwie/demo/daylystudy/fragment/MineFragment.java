@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bwie.demo.daylystudy.R;
+
 /**
  * Created by ${薛亚南}
  * on 2017/1/11 11：56.
@@ -16,6 +18,8 @@ public class MineFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view= inflater.inflate(R.layout.fragment_mine,null);
+        return view;
     }
+
 }
