@@ -58,6 +58,7 @@ public class CatogoryFragment extends BaseNetFragment {
         TextView textView1 = (TextView) view.findViewById(R.id.title_tv);
         textView1.setVisibility(View.VISIBLE);
         textView1.setTextColor(Color.WHITE);
+        textView1.setTextSize(20);
         textView1.setText("全部分类");
     }
 

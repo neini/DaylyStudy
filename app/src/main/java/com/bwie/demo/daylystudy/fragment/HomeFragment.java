@@ -1,34 +1,31 @@
 package com.bwie.demo.daylystudy.fragment;
 
-
-import android.graphics.Color;
-import android.support.v7.widget.Toolbar;
-
-import android.view.View;
-import android.widget.TextView;
-
-import com.bwie.demo.daylystudy.R;
-
-import com.bwie.demo.daylystudy.base.BaseData;
-import com.bwie.demo.daylystudy.base.BaseFragment;
-import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
-import com.bwie.demo.daylystudy.utils.ShowingPage;
-import com.bwie.demo.daylystudy.utils.ToastUtil;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.XiangQingActivity;
 import com.bwie.demo.daylystudy.adapter.CommonAdapter;
 import com.bwie.demo.daylystudy.adapter.ViewHolder;
+import com.bwie.demo.daylystudy.base.BaseData;
+import com.bwie.demo.daylystudy.base.BaseFragment;
 import com.bwie.demo.daylystudy.bean.HomeBean;
+import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
 import com.bwie.demo.daylystudy.utils.CommonUtil;
 import com.bwie.demo.daylystudy.utils.Constants;
 import com.bwie.demo.daylystudy.utils.GLideUtils;
+import com.bwie.demo.daylystudy.utils.ShowingPage;
+import com.bwie.demo.daylystudy.utils.ToastUtil;
 import com.bwie.demo.daylystudy.view.MyViewPager;
 import com.google.gson.Gson;
 import com.liaoinstan.springview.container.DefaultHeader;
@@ -401,7 +398,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
                 handler.sendMessage(msg);
 
                 HomeFragment.this.data = data;
-                ToastUtil.show(getActivity(), data);
+      // ToastUtil.show(getActivity(), data);
             }
         }
 
@@ -420,6 +417,8 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
             String str= (String) msg.obj;
             Gson gson = new Gson();
             homebean = gson.fromJson(str, HomeBean.class);
+
+
             //轮播图
             initRoolViewPager(homebean);
 //        //多彩生活

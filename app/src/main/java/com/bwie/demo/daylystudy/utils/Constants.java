@@ -1,7 +1,9 @@
 package com.bwie.demo.daylystudy.utils;
 
 public interface Constants {
-
+	//首页的接口
+	String shouye="http://www.meirixue.com";
+	String shouye3="http://www.meirixue.com/api.php?a=indexv9&c=index";
 	//圈子中话题页面轮播图
 	public static String hot_viewPager = "http://www.meirixue.com/";
 	public static String hot_viewPager_arg = "api.php?c=circle&a=getCircleNamesIndexV2";
