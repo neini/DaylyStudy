@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+    <TextView
+        android:textColor="#ffff00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/study2"
+       android:textSize="18sp"
+        />
+    <com.bwie.demo.daylystudy.view.MyListVIew
+        android:listSelector="@android:color/transparent"    
+        android:layout_marginRight="7dp"
+        android:id="@+id/other_listView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp" >
+    </com.bwie.demo.daylystudy.view.MyListVIew>
+
+</com.zhy.autolayout.AutoLinearLayout>
