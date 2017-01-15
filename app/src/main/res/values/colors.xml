@@ -3,4 +3,20 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="white">#fff</color>
+    <color name="black">#333333</color>
+    <color name="loading">#999999</color>
+    <color name="green">#40AA53</color>
+    <color name="gray">#999999</color>
+    <color name="common_text_color">#BDBDBD</color>
+    <color name="linear_divider_color">#DEDEDE</color>
+    <color name="sort_linear_divider_color">#dddddd</color>
+    <color name="common_background_color">#F2F2F2</color>
+    <color name="twolist_item_check">#e7e7e7</color>
+    <color name="red">#F95D51</color>
+    <color name="go_comment_backgroud">#33CCCC</color>
+    <color name="blue">#0000ff</color>
+    <color name="transparent">#00000000</color>
+    <color name="course_detail_bg">#525252</color>
+    <color name="text_normal_color">#666666</color>
 </resources>
