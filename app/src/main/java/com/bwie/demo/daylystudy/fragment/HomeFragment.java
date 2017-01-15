@@ -420,8 +420,6 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
             String str= (String) msg.obj;
             Gson gson = new Gson();
             homebean = gson.fromJson(str, HomeBean.class);
-
-
             //轮播图
             initRoolViewPager(homebean);
 //        //多彩生活
