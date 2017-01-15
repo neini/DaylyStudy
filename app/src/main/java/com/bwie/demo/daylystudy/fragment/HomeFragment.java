@@ -42,7 +42,7 @@ public class HomeFragment extends BaseFragment {
         myBaseDate.getData("http://www.baidu.com", "http://www.baidu.com", 0);
     }
 
-    ;
+
 
     //创建成功的视图
     @Override
