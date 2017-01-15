@@ -40,6 +40,11 @@ public class TopicFragment extends BaseNetFragment {
     private TopicRootBean topicRootBean;
     private List<TopicRootBean.DataBean.BannerBean> bannerBeanList;
     private List<TopicRootBean.DataBean.CircleBean> circleList;
+    private SpringView topic_spl;
+    private View view1;
+    private Banner banner;
+    private RecyclerView topicmy_rlv;
+    private RecyclerView topic_hot_rlv;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -49,11 +54,6 @@ public class TopicFragment extends BaseNetFragment {
 
         }
     };
-    private SpringView topic_spl;
-    private View view1;
-    private Banner banner;
-    private RecyclerView topicmy_rlv;
-    private RecyclerView topic_hot_rlv;
     private TextView topicmy_tv;
     private TextView topichot_tv;
 

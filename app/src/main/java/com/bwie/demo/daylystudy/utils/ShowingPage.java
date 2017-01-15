@@ -40,13 +40,12 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
     public static final int STATE_LOAD_ERROR = 3;
     public static final int STATE_LOAD_EMPTY = 4;
     public static final int STATE_LOAD_SUCCESS = 5;
-
+    private final AutoLinearLayout show_title;
     public int currentState = STATE_LOADING;//得到当前的状态
     private OnShowinPageListener onShowinPageListener;
     private LayoutParams params;
     private View view;
     private AutoRelativeLayout re_sucess, loading, unload, empty, error;
-    private final AutoLinearLayout show_title;
 
     public ShowingPage(Context context) {
         super(context);
@@ -149,12 +148,12 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
         STATE_LOADING(2), STATE_LOAD_ERROR(3), STATE_LOAD_EMPTY(4), STATE_LOAD_SUCCESS(5), STATE_UNLOAD(1);
         private final int currentState;
 
-        public int getCurrentState() {
-            return currentState;
-        }
-
         StateType(int currentState) {
             this.currentState = currentState;
+        }
+
+        public int getCurrentState() {
+            return currentState;
         }
     }
 }

@@ -35,11 +35,11 @@ import static android.view.View.inflate;
  */
 
 public class CrileFragment extends BaseFragment {
+    final String[] str = {"话题", "热门", "关注"};
     private boolean isConnet = true;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager cricle_lvp;
-    final String[] str = {"话题", "热门", "关注"};
     private int curnetPosition = 0;
     private int oldPosition = 0;
 
