@@ -382,7 +382,6 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
     public void intiTitleView() {
 
     }
-
     public class MyBaseDate extends BaseData {
         //成功后显示成功状态
         @Override
