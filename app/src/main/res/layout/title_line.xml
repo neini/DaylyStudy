@@ -8,7 +8,8 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/title_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <TextView
             android:textSize="50px"
@@ -19,8 +20,9 @@
             android:visibility="gone" />
 
         <android.support.design.widget.TabLayout
+            android:layout_centerHorizontal="true"
             android:id="@+id/tab"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
             android:visibility="gone"

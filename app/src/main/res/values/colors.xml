@@ -2,12 +2,5 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#f95d51</color>
-    <color name="oldColor">#000000</color>
-    <color name="sortText1">#f95d51</color>
-    <color name="sortText2">#ff9c00</color>
-    <color name="sortText3">#7ded43</color>
-    <color name="sortText4">#f95d51</color>
-    <color name="sortText5">#34b3ee</color>
-    <color name="sortText6">#90369a</color>
+    <color name="colorAccent">#FF4081</color>
 </resources>

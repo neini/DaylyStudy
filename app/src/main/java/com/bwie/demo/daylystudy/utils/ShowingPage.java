@@ -40,7 +40,6 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
     public static final int STATE_LOAD_ERROR = 3;
     public static final int STATE_LOAD_EMPTY = 4;
     public static final int STATE_LOAD_SUCCESS = 5;
-    public static final int STATE_TITLT_GONE = 6;
 
     public int currentState = STATE_LOADING;//得到当前的状态
     private OnShowinPageListener onShowinPageListener;
@@ -136,7 +135,7 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
                 if (CommonUtil.isConnected()) {
                     this.showCurrentPage(StateType.STATE_LOADING);
                     if (onShowinPageListener != null) {
-                        onShowinPageListener.isShowPager(createSuccessView());
+                        onShowinPageListener.isShowPager(v);
                     }
                 }
                 break;

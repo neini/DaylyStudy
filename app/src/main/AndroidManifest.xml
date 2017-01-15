@@ -24,12 +24,16 @@
             android:value="GlideModule" />
 
         <activity android:name=".app.MainActivity">
+        </activity>
+        <activity android:name=".DaoHangActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".XiangQingActivity" />
+        <activity android:name=".BannerActivity"></activity>
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".app.SortActivity"></activity>
         <activity android:name=".app.ExamapleActivity"></activity>
