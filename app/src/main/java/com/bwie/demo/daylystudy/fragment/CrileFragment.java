@@ -4,11 +4,13 @@ import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -112,6 +114,11 @@ public class CrileFragment extends BaseFragment {
         tabLayout.addTab(tabLayout.newTab().setText(str[0]), true);
         tabLayout.addTab(tabLayout.newTab().setText(str[1]), false);
         tabLayout.addTab(tabLayout.newTab().setText(str[2]), false);
+        LinearLayout linearLayout = (LinearLayout) tabLayout.getChildAt(0);
+        linearLayout.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+        linearLayout.setDividerPadding(50);
+        linearLayout.setDividerDrawable(ContextCompat.getDrawable(getActivity(),
+                R.drawable.layout_divider_vertical));
 
     }
 

@@ -3,13 +3,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:orientation="vertical">
 
-    <com.youth.banner.Banner
-        android:id="@+id/topic_banner"
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/topic_spl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:indicator_drawable_selected="@mipmap/dot_focus"
-        app:indicator_drawable_unselected="@mipmap/dot_normal"></com.youth.banner.Banner>
+        android:layout_height="match_parent">
+
+        　　　　　
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            >
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+              <!--  <include layout="@layout/topic_rooitem" />-->
+                <com.youth.banner.Banner
+                    android:id="@+id/topic_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="400px"
+                    app:indicator_drawable_selected="@mipmap/dot_focus"
+                    app:indicator_drawable_unselected="@mipmap/dot_normal"/>
+
+                 <TextView
+                     android:id="@+id/topicmy_tv"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:padding="20px"
+                     android:text="我的圈子"
+                     android:textColor="#000"
+                     android:textSize="30px"
+                     android:visibility="gone" />
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                 <android.support.v7.widget.RecyclerView
+                     android:id="@+id/topicmy_rlv"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent" />
+                    </com.zhy.autolayout.AutoRelativeLayout>
+                 <TextView
+                     android:id="@+id/topichot_tv"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:padding="20px"
+                     android:text="热门圈子"
+                     android:textColor="#000"
+                     android:textSize="30px" />
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                 <android.support.v7.widget.RecyclerView
+                     android:id="@+id/topic_hot_rlv"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent" />
+                </com.zhy.autolayout.AutoRelativeLayout>
+             </com.zhy.autolayout.AutoLinearLayout>
+
+
+        </ScrollView>
+    </com.liaoinstan.springview.widget.SpringView>
 
 </com.zhy.autolayout.AutoLinearLayout>
