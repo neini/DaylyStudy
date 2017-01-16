@@ -38,8 +38,9 @@ public class DaoHangActivity extends AppCompatActivity {
 
         } else {
             //不是第一次进入时所要做的动作
-            Intent intent=new Intent(DaoHangActivity.this,MainActivity.class);
+            Intent intent = new Intent(DaoHangActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 

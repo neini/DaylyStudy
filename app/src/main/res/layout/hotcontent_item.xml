@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/hotcontent_icon_img"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/normal_panding"
+            android:src="@mipmap/me" />
+
+        <TextView
+            android:id="@+id/hotcontent_tv_usename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/normal_panding"
+            android:layout_toRightOf="@id/hotcontent_icon_img"
+            android:padding="@dimen/normal_panding"
+            android:text="pppp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_text_size" />
+
+        <CheckBox
+            android:id="@+id/hotcon_bt_concern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/normal_panding"
+            android:background="@drawable/hotcb_guanzhu_selector"
+            android:button="@null" />
+
+        <Button
+            android:id="@+id/hotcon_bt_unconcern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/normal_panding"
+            android:background="@mipmap/not_concern"
+            android:visibility="gone" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/hot_oneiimg"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:visibility="gone">
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/hot_oneimg_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/hot_twoiimg"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_margin="@dimen/normal_imgpanding"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/hot_twoimg_one"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_margin="@dimen/normal_imgpanding"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/hot_twoimg_two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/hot_threeiimg"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_margin="@dimen/normal_imgpanding"
+            android:id="@+id/hot_threeimg_one"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_margin="@dimen/normal_imgpanding"
+            android:id="@+id/hot_threeiimg_two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_margin="@dimen/normal_imgpanding"
+            android:id="@+id/hot_threeiimg_three"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:id="@+id/hotcontent_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_panding"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_text_size" />
+    <TextView
+        android:id="@+id/hotcontent_tv_leaderette"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_panding"
+        android:textSize="@dimen/title_text_size" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_panding"
+            android:src="@mipmap/topic_label" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/hotcontent_tids"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_panding"></com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/gray" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/normal_panding">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/hotcontent_zan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/botcb_zan_selector"
+                android:padding="@dimen/normal_panding" />
+
+            <TextView
+                android:id="@+id/hotcontent_zanshu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:layout_width="2px"
+            android:layout_height="match_parent"
+            android:background="@color/gray"
+            android:padding="5px" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/chotcontent_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/forwarding"
+                android:padding="@dimen/normal_panding" />
+
+            <TextView
+                android:id="@+id/chotcontent_shareshu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:layout_width="2px"
+            android:layout_height="match_parent"
+            android:background="@color/gray"
+            android:padding="5px" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/hotcontent_pinlun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/message_comment"
+                android:padding="@dimen/normal_panding" />
+
+            <TextView
+                android:id="@+id/hotcontent_pinlunshu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/gray" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:background="@color/linear_divider_color" />
+</com.zhy.autolayout.AutoLinearLayout>

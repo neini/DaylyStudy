@@ -32,7 +32,7 @@ public class ExamapleActivity extends BaseShowInPagerActivity {
     }
 
     @Override
-    public void creatTitleView() {
+    public void creatTitleView(View view) {
 
     }
 

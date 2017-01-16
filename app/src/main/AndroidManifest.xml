@@ -23,8 +23,7 @@
             android:name="com.bwie.demo.daylystudy.utils.MyGlideMode"
             android:value="GlideModule" />
 
-        <activity android:name=".app.MainActivity">
-        </activity>
+        <activity android:name=".app.MainActivity"></activity>
         <activity android:name=".DaoHangActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

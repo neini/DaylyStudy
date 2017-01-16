@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.bwie.demo.daylystudy.R;
 import com.zhy.autolayout.utils.AutoUtils;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+
 /**
  * Created by ${薛亚南}
  * on 2017/1/13 22：30.
@@ -19,7 +21,7 @@ public class TopicHotItemHolder<T> extends RecyclerView.ViewHolder {
     public TextView topichot_tv_title, topichot_tv_brief, topichot_tv_postCount, topichot_tv_userCount;
 
     public TopicHotItemHolder(View itemView) {
-        super(itemView);
+       super(itemView);
         AutoUtils.autoSize(itemView);
         imageView = (ImageView) itemView.findViewById(R.id.imageView);
         topichot_tv_title = (TextView) itemView.findViewById(R.id.topichot_tv_title);

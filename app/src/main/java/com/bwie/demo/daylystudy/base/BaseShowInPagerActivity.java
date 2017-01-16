@@ -30,7 +30,7 @@ public abstract class BaseShowInPagerActivity extends AutoLayoutActivity {
 
             @Override
             protected void setTitleView(View view) {
-                BaseShowInPagerActivity.this.creatTitleView();
+                BaseShowInPagerActivity.this.creatTitleView(view);
             }
 
 
@@ -66,7 +66,7 @@ public abstract class BaseShowInPagerActivity extends AutoLayoutActivity {
 
     public abstract View creatSuccessView();
 
-    public abstract void creatTitleView();
+    public abstract void creatTitleView(View view);
 
 
 }

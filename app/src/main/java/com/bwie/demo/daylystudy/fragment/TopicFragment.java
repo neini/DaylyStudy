@@ -22,6 +22,7 @@ import com.google.gson.Gson;
 import com.liaoinstan.springview.container.DefaultHeader;
 import com.liaoinstan.springview.widget.SpringView;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +88,13 @@ public class TopicFragment extends BaseNetFragment {
             imgs.add(bannerBeanList.get(i).getImg());
         }
         banner.setImageLoader(new MyGlideImagLoaer()).setImages(imgs).start();
+        //banner的点击事件
+         banner.setOnBannerClickListener(new OnBannerClickListener() {
+             @Override
+             public void OnBannerClick(int position) {
 
+             }
+         });
     }
 
     private void initView() {

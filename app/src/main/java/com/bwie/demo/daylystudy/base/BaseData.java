@@ -15,11 +15,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Map;
+import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.R.attr.key;
+import static android.R.attr.keySet;
 import static android.R.attr.path;
 import static android.os.Build.VERSION_CODES.M;
 
@@ -119,12 +122,17 @@ public abstract class BaseData {
     }
 
     //post获取网络数据
-    public void postMoetedNet(boolean isReadCookie, boolean isSaveCookie, final String baseUri, final String uri, final int time, Map<String, String> map) {
+    public void postMoetedNet(boolean isReadCookie, boolean isSaveCookie, final String baseUri, final String uri, final int time, final Map<String, String> map) {
         HttpUtils.postMethed(isReadCookie, isSaveCookie, baseUri, uri, map, new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 String s = response.body();
-                wtitrToLocal(baseUri, uri, time, s);
+                StringBuffer sb = new StringBuffer(uri);
+                Set<String> keyset = map.keySet();
+                for (String str : keyset) {
+                    sb.append(map.get(str));
+                }
+                wtitrToLocal(baseUri, sb.toString(), time, s);
                 onSucesss(s);
             }
 

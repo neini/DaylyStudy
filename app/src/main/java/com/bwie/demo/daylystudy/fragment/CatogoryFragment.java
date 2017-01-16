@@ -69,7 +69,7 @@ public class CatogoryFragment extends BaseNetFragment {
         public void onSucesss(String data) {
             CatogoryFragment.this.data = data;
             CatogoryFragment.this.showCurrentView(ShowingPage.StateType.STATE_LOAD_SUCCESS);
-            ToastUtil.show(getActivity(), data);
+            //  ToastUtil.show(getActivity(), data);
         }
 
         //error后显示error状态

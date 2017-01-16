@@ -2,6 +2,7 @@ package com.bwie.demo.daylystudy.fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.Toolbar;
 import android.view.View;

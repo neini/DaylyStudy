@@ -34,7 +34,7 @@ public class MyGlideMode implements GlideModule {
         builder.setMemoryCache(new LruResourceCache(memoryCacheSize));
         //指定到SDcard
         File cacheDir = Environment.getExternalStorageDirectory();//指定的是数据的缓存地址
-        int diskCacheSize = 1024 * 1024 * 30;//最多可以缓存多少字节的数据
+        int diskCacheSize = 1024 * 1024 * 100;//最多可以缓存多少字节的数据
         //设置磁盘缓存大小
         builder.setDiskCache(new DiskLruCacheFactory(cacheDir.getPath(), "glide", diskCacheSize));
     }
