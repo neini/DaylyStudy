@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="165dp"
+    android:background="#ffffff"
+    android:orientation="horizontal" >
+    <com.zhy.autolayout.AutoRelativeLayout
+         android:id="@+id/home_ad_rl"
+         android:layout_marginLeft="9dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/home_ad_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"
+            android:textColor="#f95d51"
+            android:text="最强思路"
+             />
+
+        <TextView
+            android:id="@+id/home_ad_tv2"
+            android:text="get思维导图"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/home_ad_tv1"
+            android:singleLine="true"
+            android:layout_marginTop="1dp"
+            android:textSize="10sp"
+            android:textColor="#a1a1a1"
+            />
+
+        <ImageView
+             android:scaleType="fitXY"
+            android:id="@+id/home_ad_iv1"
+            android:layout_width="150dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/home_ad_tv2"
+             />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <View 
+        android:layout_marginLeft="20dp"
+        android:layout_width="0.5dp"
+        android:layout_height="fill_parent"
+        android:background="#eaeaea"/>
+    <com.zhy.autolayout.AutoLinearLayout
+       
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+        
+        
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/hoem_ad_ll1"
+           android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+           
+            android:orientation="horizontal" >
+
+            <com.zhy.autolayout.AutoLinearLayout
+               android:layout_gravity="center_vertical"
+               android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="9dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+                <TextView
+                    android:text="跑步"
+                    android:id="@+id/home_ad_tv3"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:textColor="#5ba0ff"
+                     />
+                <TextView
+                    android:id="@+id/home_ad_tv4"
+                    android:text="打造完美步伐"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                     android:layout_marginTop="1dp"
+                    android:textSize="10sp"
+                    android:textColor="#a1a1a1"
+                     />
+            </com.zhy.autolayout.AutoLinearLayout>
+            
+            
+            <ImageView 
+                android:scaleType="fitXY"
+                android:id="@+id/home_ad_iv2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_launcher"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="12dp"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#eaeaea"/>
+        <com.zhy.autolayout.AutoLinearLayout
+            
+            android:id="@+id/hoem_ad_ll2"
+           android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+             android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="9dp"
+                android:orientation="vertical" >
+                <TextView
+                    android:text="思维"
+                    android:id="@+id/home_ad_tv5"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#ffb321"
+                    android:textSize="16sp"
+                     />
+                <TextView
+                    android:id="@+id/home_ad_tv6"
+                    android:text="开启大脑革命"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginTop="1dp"
+                     android:textSize="10sp"
+                    android:textColor="#a1a1a1"
+                    />
+            </com.zhy.autolayout.AutoLinearLayout>
+            <ImageView
+                android:scaleType="fitXY"
+                 android:id="@+id/home_ad_iv3"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="9dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginBottom="12dp"
+               />
+            
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -2,6 +2,7 @@ package com.bwie.demo.daylystudy.fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -24,7 +25,6 @@ import com.bwie.demo.daylystudy.utils.CommonUtil;
 import com.bwie.demo.daylystudy.utils.Constants;
 import com.bwie.demo.daylystudy.utils.GLideUtils;
 import com.bwie.demo.daylystudy.utils.ShowingPage;
-import com.bwie.demo.daylystudy.utils.ToastUtil;
 import com.bwie.demo.daylystudy.view.MyViewPager;
 import com.google.gson.Gson;
 import com.liaoinstan.springview.container.DefaultHeader;
@@ -272,11 +272,8 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         myViewPager.setOnPageClickListener(new MyViewPager.OnPageClickListener() {
             @Override
             public void setOnPage(int position) {
-                // Toast.makeText(getContext(),"aaaa",Toast.LENGTH_SHORT).show();
-                //   TiaoZhuan.tiaoZhuan(getActivity(),adl.get(position).getAd_type_dynamic_data());
-                //  TiaoZhuan.tiaoZhuan(getActivity(),adl.get(position).getAd_type_dynamic());
+
                 Intent intent=new Intent(getActivity(),XiangQingActivity.class);
-                //  intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 getActivity().startActivity(intent);
             }
         });
@@ -403,7 +400,6 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
     public void intiTitleView() {
 
     }
-
     public class MyBaseDate extends BaseData {
         //成功后显示成功状态
         @Override

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:textColor="#ff0000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+         android:layout_marginTop="10dp"
+        android:background="@mipmap/recommend"
+        android:textSize="18sp" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/home_recomm_top_iv1"
+            android:layout_width="0dp"
+            android:layout_height="105dp"
+            android:layout_weight="1"
+           />
+
+        <ImageView
+            android:scaleType="fitXY"
+             android:id="@+id/home_recomm_top_iv2"
+            android:layout_width="0dp"
+            android:layout_height="105dp"
+           android:layout_marginLeft="6dp"
+            android:layout_weight="1"
+            />
+    </com.zhy.autolayout.AutoLinearLayout>
+        
+         <com.bwie.demo.daylystudy.view.MyListVIew
+         android:listSelector="@android:color/transparent"
+        android:id="@+id/home_recommend_lv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       android:layout_marginRight="9dp"
+        >
+        
+    </com.bwie.demo.daylystudy.view.MyListVIew>
+        
+<!--     </LinearLayout> -->
+   
+
+
+</com.zhy.autolayout.AutoLinearLayout>

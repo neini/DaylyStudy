@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#ffff"
+    android:layout_height="match_parent">
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/springView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <include layout="@layout/layout_roll_view" />
+        <include layout="@layout/activity_more" />
+        <include layout="@layout/activity_odds" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#d9d9d9" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="7dp"
+            android:background="#d9d9d9" />
+        <include layout="@layout/activity_hot" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#d9d9d9" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="7dp"
+            android:background="#d9d9d9" />
+        <include layout="@layout/activity_recommend" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#d9d9d9" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="7dp"
+            android:background="#d9d9d9" />
+        <include layout="@layout/activity_indexother" />
+    </com.zhy.autolayout.AutoLinearLayout>
+    </ScrollView>
+    </com.liaoinstan.springview.widget.SpringView>
+</com.zhy.autolayout.AutoLinearLayout>
