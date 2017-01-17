@@ -1,6 +1,12 @@
 package com.bwie.demo.daylystudy.utils;
 
 public interface Constants {
+    //话题详情最热最新
+    String topichot = "http://www.meirixue.com";
+    String topichotargs = "api.php?c=circle&a=getCirclePostList";
+    //话题详情上方
+    String topictop = "http://www.meirixue.com";
+    String topictopargs = "api.php?c=circle&a=getCircleNameInfo";
     //热门内容接口
     public static String HOTCONTENT = "http://www.meirixue.com";
     public static String HOTCONTENTARGS = "api.php?c=circle&a=getCirclePostListByTid";
@@ -14,7 +20,8 @@ public interface Constants {
     public static String hot_viewPager = "http://www.meirixue.com/";
     public static String hot_viewPager_arg = "api.php?c=circle&a=getCircleNamesIndexV2";
     // 登录接口
-    String signIn = "http://www.meirixue.com/api.php?c=login&a=index";
+    String signIn = "http://www.meirixue.com";
+    String signInArgs = "http://www.meirixue.com/api.php?c=login&a=index";
     // 注册接口获得短信的验证码
     String signInCode = "http://www.meirixue.com/api.php?c=register&a=doregister";
     // 短信重发接口

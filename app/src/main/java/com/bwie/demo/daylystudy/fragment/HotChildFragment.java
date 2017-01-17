@@ -109,7 +109,7 @@ public class HotChildFragment extends BaseNetFragment {
         map.put("tid", tid);
         map.put("page", page + "");
         Log.i("TAG", "传输的" + page);
-        myBaseData.postData(false, false, Constants.HOTCONTENT, Constants.HOTCONTENTARGS, 0, map);
+        myBaseData.postData(false, false, Constants.HOTCONTENT, Constants.HOTCONTENTARGS, BaseData.NORMALTIME, map);
     }
 
 

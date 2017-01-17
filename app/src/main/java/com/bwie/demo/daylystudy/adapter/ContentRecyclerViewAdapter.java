@@ -1,18 +1,27 @@
 package com.bwie.demo.daylystudy.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.bean.HotContentBean;
+import com.bwie.demo.daylystudy.bean.SpannedData;
 import com.bwie.demo.daylystudy.holder.HotContentHolder;
 import com.bwie.demo.daylystudy.utils.GLideUtils;
+import com.bwie.demo.daylystudy.utils.ToastUtil;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -60,9 +69,34 @@ public class ContentRecyclerViewAdapter extends RecyclerView.Adapter<HotContentH
         } else {
             holder.hotcontent_tv_leaderette.setVisibility(View.GONE);
         }
-        String source = dataBean.getSource();
         Gson gson = new Gson();
-        if (source != null) {
+
+        String p_tids = dataBean.getP_tids();
+        if (!TextUtils.isEmpty(p_tids)) {
+            Spanned spanned = Html.fromHtml(p_tids);
+            final SpannedData[] spannedDatas = gson.fromJson(spanned.toString(), SpannedData[].class);
+            holder.hotcontent_tids.removeAllViews();
+            LinearLayout.LayoutParams pa = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            for (int i = 0; i < spannedDatas.length; i++) {
+                final int p = i;
+                TextView textView = new TextView(context);
+                textView.setTextColor(Color.RED);
+                textView.setText("#" + spannedDatas[p].getTname() + "#");
+                pa.setMargins(10, 0, 10, 0);
+                //点击事件
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ToastUtil.show(context, spannedDatas[p].getTname());
+                    }
+                });
+                holder.hotcontent_tids.addView(textView, pa);
+            }
+        }
+
+
+        String source = dataBean.getSource();
+        if (!TextUtils.isEmpty(source)) {
             String[] strings = gson.fromJson(source, String[].class);
             if (strings.length == 1) {
                 holder.hot_oneiimg.setVisibility(View.VISIBLE);
@@ -87,7 +121,7 @@ public class ContentRecyclerViewAdapter extends RecyclerView.Adapter<HotContentH
                 holder.hot_threeiimg_three.setScaleType(ImageView.ScaleType.FIT_XY);
                 Glide.with(context).load(strings[0]).placeholder(R.mipmap.default_three).into(holder.hot_threeimg_one);
                 Glide.with(context).load(strings[1]).placeholder(R.mipmap.default_three).into(holder.hot_threeiimg_two);
-                Glide.with(context).load(strings[0]).placeholder(R.mipmap.default_three).into(holder.hot_threeiimg_three);
+                Glide.with(context).load(strings[2]).placeholder(R.mipmap.default_three).into(holder.hot_threeiimg_three);
             }
         }
         holder.hotcontent_zanshu.setText(dataBean.getIs_prasie() + "");

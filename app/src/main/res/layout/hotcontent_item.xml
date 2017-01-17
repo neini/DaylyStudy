@@ -58,10 +58,11 @@
         android:visibility="gone">
 
         <ImageView
-            android:src="@mipmap/ic_launcher"
             android:id="@+id/hot_oneimg_one"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_panding"
+            android:src="@mipmap/ic_launcher" />
     </com.zhy.autolayout.AutoLinearLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -71,20 +72,20 @@
         android:visibility="gone">
 
         <ImageView
-            android:layout_margin="@dimen/normal_imgpanding"
-            android:src="@mipmap/ic_launcher"
             android:id="@+id/hot_twoimg_one"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_margin="@dimen/normal_imgpanding"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
 
         <ImageView
-            android:layout_margin="@dimen/normal_imgpanding"
-            android:src="@mipmap/ic_launcher"
             android:id="@+id/hot_twoimg_two"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_margin="@dimen/normal_imgpanding"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
     </com.zhy.autolayout.AutoLinearLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -94,24 +95,24 @@
         android:visibility="gone">
 
         <ImageView
-            android:layout_margin="@dimen/normal_imgpanding"
             android:id="@+id/hot_threeimg_one"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_imgpanding"
             android:layout_weight="1" />
 
         <ImageView
-            android:layout_margin="@dimen/normal_imgpanding"
             android:id="@+id/hot_threeiimg_two"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_imgpanding"
             android:layout_weight="1" />
 
         <ImageView
-            android:layout_margin="@dimen/normal_imgpanding"
             android:id="@+id/hot_threeiimg_three"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_imgpanding"
             android:layout_weight="1" />
     </com.zhy.autolayout.AutoLinearLayout>
 
@@ -119,14 +120,15 @@
         android:id="@+id/hotcontent_tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/normal_panding"
+        android:padding="@dimen/normal_panding"
         android:textColor="@color/black"
         android:textSize="@dimen/title_text_size" />
+
     <TextView
         android:id="@+id/hotcontent_tv_leaderette"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/normal_panding"
+        android:padding="@dimen/normal_panding"
         android:textSize="@dimen/title_text_size" />
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -138,6 +140,7 @@
             android:id="@+id/img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/normal_panding"
             android:src="@mipmap/topic_label" />
 
@@ -145,7 +148,7 @@
             android:id="@+id/hotcontent_tids"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/normal_panding"></com.zhy.autolayout.AutoLinearLayout>
+            android:layout_gravity="center"></com.zhy.autolayout.AutoLinearLayout>
     </com.zhy.autolayout.AutoLinearLayout>
 
     <TextView
@@ -239,6 +242,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:background="@color/gray" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="10px"

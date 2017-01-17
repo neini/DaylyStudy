@@ -35,13 +35,12 @@ import static android.view.View.inflate;
  */
 
 public class CrileFragment extends BaseFragment {
+    final String[] str = {"话题", "热门", "关注"};
     private boolean isConnet = true;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager cricle_lvp;
-    final String[] str = {"话题", "热门", "关注"};
-    private int curnetPosition = 0;
-    private int oldPosition = 0;
+
 
     @Override
     public void onLoad() {
@@ -60,19 +59,6 @@ public class CrileFragment extends BaseFragment {
         showCurrentView(ShowingPage.StateType.STATE_LOAD_SUCCESS);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (cricle_lvp != null) {
-            cricle_lvp.setCurrentItem(oldPosition);
-        }
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        oldPosition = curnetPosition;
-    }
 
     @Override
     public View createSuccessView() {
@@ -81,7 +67,7 @@ public class CrileFragment extends BaseFragment {
         cricle_lvp.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                curnetPosition = position;
+
                 return HomeFragmentFactoty.getFragment(str[position]);
             }
 

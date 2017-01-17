@@ -1,0 +1,236 @@
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+
+    android:orientation="vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/my_myclass"
+        android:layout_width="fill_parent"
+
+        android:layout_height="44dp"
+        android:layout_marginTop="7dp">
+
+        <ImageView
+            android:id="@+id/my_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            android:src="@mipmap/mya" />
+
+        <TextView
+            android:id="@+id/my_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/my_iv1"
+            android:text="我的课程"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/my_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@mipmap/myrig" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="19dp"
+        android:background="#c9c9c9" />
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/my_collect"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp">
+
+        <ImageView
+            android:id="@+id/my_iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            android:src="@mipmap/myb" />
+
+        <TextView
+            android:id="@+id/my_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/my_iv3"
+            android:text="收藏"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/my_iv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@mipmap/myrig" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="19dp"
+        android:background="#c9c9c9" />
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/my_msg"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp">
+
+        <ImageView
+            android:id="@+id/my_iv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            android:src="@mipmap/myd" />
+
+        <TextView
+            android:id="@+id/my_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/my_iv5"
+            android:text="我的消息"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:id="@+id/my_message_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/my_iv6"
+            android:layout_toRightOf="@+id/my_tv3"
+
+            android:gravity="center"
+            android:textColor="#ffffff"
+
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/my_iv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@mipmap/myrig" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="19dp"
+        android:background="#c9c9c9" />
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/my_feedback"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp">
+
+        <ImageView
+            android:id="@+id/my_iv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            android:src="@mipmap/mye" />
+
+        <TextView
+            android:id="@+id/my_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/my_iv7"
+            android:text="意见反馈"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/my_iv8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@mipmap/myrig" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="19dp"
+        android:background="#c9c9c9" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/my_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp">
+
+        <ImageView
+            android:id="@+id/my_iv9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            android:src="@mipmap/myf" />
+
+        <TextView
+            android:id="@+id/my_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/my_iv9"
+            android:text="设置"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/my_iv10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@mipmap/myrig" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="19dp"
+        android:background="#c9c9c9" />
+
+</com.zhy.autolayout.AutoLinearLayout>

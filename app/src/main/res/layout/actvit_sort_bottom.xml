@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+     <com.zhy.autolayout.AutoLinearLayout
+    	     android:layout_marginTop="7dp"
+       		 android:background="#ffffff"
+        	android:layout_width="fill_parent"
+       	 android:layout_height="wrap_content"
+       	 android:orientation="vertical"
+       	 android:divider="@drawable/sort_shape_divider_linear">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+         android:layout_marginLeft="15dp"
+         android:layout_marginRight="15dp"
+        android:id="@+id/sort_rl_item4"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp" >
+        
+        
+         <ImageView
+             android:id="@+id/sort_icon_iv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/portfolio" />
+
+        <TextView
+            android:id="@+id/sort_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_toRightOf="@id/sort_icon_iv4"
+           android:layout_marginLeft="11dp"
+           android:layout_centerVertical="true"
+            
+           
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+       
+
+        <ImageView
+             android:id="@+id/sort_iv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.bwie.demo.daylystudy.view.MyGridView
+        android:id="@+id/sort_gridview4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:layout_marginTop="10dp"
+				android:paddingBottom="4dp"
+				android:paddingLeft="9dp"
+				 android:paddingRight="9dp"  
+        android:verticalSpacing="10dp"
+        android:visibility="gone" >
+    </com.bwie.demo.daylystudy.view.MyGridView>
+
+    
+     <com.zhy.autolayout.AutoLinearLayout
+    	     android:layout_marginTop="7dp"
+       		 android:background="#ffffff"
+        	android:layout_width="fill_parent"
+       	 android:layout_height="wrap_content"
+       	 android:orientation="vertical"
+       	 android:divider="@drawable/sort_shape_divider_linear">
+    <com.zhy.autolayout.AutoRelativeLayout
+         android:layout_marginLeft="15dp"
+         android:layout_marginRight="15dp"
+        android:id="@+id/sort_rl_item5"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp" >
+        
+         <ImageView
+             android:id="@+id/sort_icon_iv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/hat" />
+
+        <TextView
+            android:id="@+id/sort_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_toRightOf="@id/sort_icon_iv5"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:gravity="center"
+            
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+       
+
+        <ImageView
+             android:id="@+id/sort_iv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+             />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.bwie.demo.daylystudy.view.MyGridView
+        android:id="@+id/sort_gridview5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        
+        android:layout_marginTop="10dp"
+				android:paddingBottom="4dp"
+				android:paddingLeft="9dp"
+				 android:paddingRight="9dp"  
+        android:verticalSpacing="10dp"
+        android:visibility="gone" >
+    </com.bwie.demo.daylystudy.view.MyGridView>
+    
+    
+    
+     <com.zhy.autolayout.AutoLinearLayout
+    	     android:layout_marginTop="7dp"
+       		 android:background="#ffffff"
+        	android:layout_width="fill_parent"
+       	 android:layout_height="wrap_content"
+       	 android:orientation="vertical"
+       	 android:divider="@drawable/sort_shape_divider_linear">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+         android:layout_marginLeft="15dp"
+         android:layout_marginRight="15dp"
+        android:id="@+id/sort_rl_item6"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp" >
+        
+        
+         <ImageView
+             android:id="@+id/sort_icon_iv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/language" />
+
+        <TextView
+            android:id="@+id/sort_tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/sort_icon_iv6"
+            android:layout_marginLeft="11dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+           
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+       
+
+        <ImageView
+             android:id="@+id/sort_iv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" 
+            />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.bwie.demo.daylystudy.view.MyGridView
+        android:id="@+id/sort_gridview6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        
+        android:layout_marginTop="10dp"
+				android:paddingBottom="10dp"
+				android:paddingLeft="9dp"
+				 android:paddingRight="9dp"  
+        android:verticalSpacing="10dp"
+        android:visibility="gone" >
+    </com.bwie.demo.daylystudy.view.MyGridView>
+    
+    <View 
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd"
+        />
+        
+   
+
+</com.zhy.autolayout.AutoLinearLayout>

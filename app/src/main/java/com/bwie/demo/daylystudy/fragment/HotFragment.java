@@ -55,7 +55,7 @@ public class HotFragment extends BaseNetFragment {
 
     @Override
     public void onload() {
-        myBaseData.getData(Constants.HOTTITLE, Constants.HOTTTITLEARGS, 0);
+        myBaseData.getData(Constants.HOTTITLE, Constants.HOTTTITLEARGS, BaseData.NORMALTIME);
     }
 
     @Override

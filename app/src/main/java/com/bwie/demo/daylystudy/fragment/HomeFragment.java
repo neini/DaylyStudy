@@ -39,62 +39,6 @@ import java.util.List;
  */
 
 public class HomeFragment extends BaseFragment implements SpringView.OnFreshListener{
-    private SpringView springView;
-    private HomeBean homebean;
-    private String data;
-    private LinearLayout dots_ll;
-    private LinearLayout hoem_ad_ll1;
-    private LinearLayout hoem_ad_ll2;
-    private LinearLayout home_more_1;
-    private RelativeLayout home_ad_rl;
-    private MyViewPager myViewPager;
-
-    private ImageView home_more_iv_1;
-    private ImageView home_more_iv_2;
-    private ImageView home_more_iv_3;
-    private ImageView home_more_iv_4;
-    private ImageView home_more_iv_5;
-    private ImageView home_more_iv_6;
-
-    private TextView home_more_tv_1;
-    private TextView home_more_tv_2;
-    private TextView home_more_tv_3;
-    private TextView home_more_tv_4;
-    private TextView home_more_tv_5;
-    private TextView home_more_tv_6;
-
-    private ImageView home_ad_iv1;
-    private ImageView home_ad_iv2;
-    private ImageView home_ad_iv3;
-    private TextView home_ad_tv1;
-    private TextView home_ad_tv2;
-    private TextView home_ad_tv3;
-    private TextView home_ad_tv4;
-    private TextView home_ad_tv5;
-    private TextView home_ad_tv6;
-    private RelativeLayout home_hot_Rl1;
-
-    private ImageView home_hot_iv1;
-    private TextView home_hot_title_1;
-    private TextView hot_name_1;
-
-    private ImageView home_hot_iv2;
-    private TextView home_hot_title_2;
-    private TextView hot_name_2;
-
-    private ImageView home_hot_iv3;
-    private TextView home_hot_title_3;
-    private TextView hot_name_3;
-
-    private ImageView home_hot_iv4;
-    private TextView home_hot_title_4;
-    private TextView hot_name_4;
-
-    private ImageView home_recomm_top_iv1;
-    private ImageView home_recomm_top_iv2;
-    private ListView home_recommend_lv;
-    private ListView other_listView;
-
     int[] dotArray = new int[]{R.mipmap.zaker_content_praise_press, R.mipmap.zaker_content_praise};
     //装viewpager的图片
     ArrayList<String> imgUrlList = new ArrayList<>();
@@ -109,8 +53,77 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
     ArrayList<ImageView> ivlist4= new ArrayList<>();
     ArrayList<TextView> tvlist4 = new ArrayList<>();
     List<HomeBean.DataBean.SliderBean> adl;
-    private GridView gv;
+    private SpringView springView;
+    private HomeBean homebean;
+    private String data;
+    private LinearLayout dots_ll;
+    private LinearLayout hoem_ad_ll1;
+    private LinearLayout hoem_ad_ll2;
+    private LinearLayout home_more_1;
+    private RelativeLayout home_ad_rl;
+    private MyViewPager myViewPager;
+    private ImageView home_more_iv_1;
+    private ImageView home_more_iv_2;
+    private ImageView home_more_iv_3;
+    private ImageView home_more_iv_4;
+    private ImageView home_more_iv_5;
+    private ImageView home_more_iv_6;
+    private TextView home_more_tv_1;
+    private TextView home_more_tv_2;
+    private TextView home_more_tv_3;
+    private TextView home_more_tv_4;
+    private TextView home_more_tv_5;
+    private TextView home_more_tv_6;
+    private ImageView home_ad_iv1;
+    private ImageView home_ad_iv2;
+    private ImageView home_ad_iv3;
+    private TextView home_ad_tv1;
+    private TextView home_ad_tv2;
+    private TextView home_ad_tv3;
+    private TextView home_ad_tv4;
+    private TextView home_ad_tv5;
+    private TextView home_ad_tv6;
+    private RelativeLayout home_hot_Rl1;
+    private ImageView home_hot_iv1;
+    private TextView home_hot_title_1;
+    private TextView hot_name_1;
+    private ImageView home_hot_iv2;
+    private TextView home_hot_title_2;
+    private TextView hot_name_2;
+    private ImageView home_hot_iv3;
+    private TextView home_hot_title_3;
+    private TextView hot_name_3;
+    private ImageView home_hot_iv4;
+    private TextView home_hot_title_4;
+    private TextView hot_name_4;
+    private ImageView home_recomm_top_iv1;
+    private ImageView home_recomm_top_iv2;
+    private ListView home_recommend_lv;
+    private ListView other_listView;
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            String str= (String) msg.obj;
+            Gson gson = new Gson();
+            homebean = gson.fromJson(str, HomeBean.class);
 
+
+            //轮播图
+            initRoolViewPager(homebean);
+//        //多彩生活
+            initDuoCai(homebean);
+//        //最强思路
+            initZuiQiang(homebean);
+//        //热门
+            initReMen(homebean);
+//        //小编
+            initXiaoBian(homebean);
+//        //大家
+            initDaJia(homebean);
+        }
+    };
+    private GridView gv;
     private Toolbar title_toolbar;
 
     //加载数据 并根据加载的结果返回相应的状态
@@ -130,12 +143,14 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         MyBaseDate myBaseDate = new MyBaseDate();
         myBaseDate.getData(Constants.shouye, Constants.shouye3, BaseData.NORMALTIME);
     }
+
     //创建成功的视图
     @Override
     public View createSuccessView() {
         View view = initView();
         return view;
     }
+
     private void initDaJia(HomeBean homebean) {
         List<HomeBean.DataBean.IndexothersBean> ib = homebean.getData().getIndexothers();
         CommonAdapter comm = new CommonAdapter<HomeBean.DataBean.IndexothersBean>(getActivity(), ib, R.layout.lv_item) {
@@ -282,6 +297,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         }
 
     }
+
     private View initView() {
         View view = CommonUtil.inflate(R.layout.homefragment);
         //shangalaxiaal
@@ -359,6 +375,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         return view;
 
     }
+
     @Override
     public void onRefresh() {
         springView.onFinishFreshAndLoad();
@@ -368,6 +385,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
     public void onLoadmore() {
 
     }
+
     //设置标题栏
     @Override
     public void setTitleView(View view) {
@@ -405,27 +423,4 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
             }
         }
     }
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            String str= (String) msg.obj;
-            Gson gson = new Gson();
-            homebean = gson.fromJson(str, HomeBean.class);
-
-
-            //轮播图
-            initRoolViewPager(homebean);
-//        //多彩生活
-            initDuoCai(homebean);
-//        //最强思路
-            initZuiQiang(homebean);
-//        //热门
-            initReMen(homebean);
-//        //小编
-            initXiaoBian(homebean);
-//        //大家
-            initDaJia(homebean);
-        }
-    };
 }

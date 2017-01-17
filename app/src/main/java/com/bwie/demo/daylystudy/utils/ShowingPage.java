@@ -1,6 +1,7 @@
 package com.bwie.demo.daylystudy.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,10 +13,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bwie.demo.daylystudy.R;
+import com.bwie.demo.daylystudy.app.LogingActivity;
 import com.bwie.demo.daylystudy.application.MyApplication;
 import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
+
+import org.greenrobot.eventbus.EventBus;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
@@ -40,16 +44,17 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
     public static final int STATE_LOAD_ERROR = 3;
     public static final int STATE_LOAD_EMPTY = 4;
     public static final int STATE_LOAD_SUCCESS = 5;
-
+    private final AutoLinearLayout show_title;
     public int currentState = STATE_LOADING;//得到当前的状态
     private OnShowinPageListener onShowinPageListener;
     private LayoutParams params;
     private View view;
     private AutoRelativeLayout re_sucess, loading, unload, empty, error;
-    private final AutoLinearLayout show_title;
+    private Context context;
 
     public ShowingPage(Context context) {
         super(context);
+        this.context = context;
         params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         view = LayoutInflater.from(context).inflate(R.layout.showinpager, null);
         re_sucess = (AutoRelativeLayout) view.findViewById(R.id.re_sucess);
@@ -59,6 +64,7 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
         error = (AutoRelativeLayout) view.findViewById(R.id.error);
         show_title = (AutoLinearLayout) view.findViewById(R.id.show_title);
         view.findViewById(R.id.showing_error_bt_reload).setOnClickListener(this);
+        view.findViewById(R.id.unload).setOnClickListener(this);
         this.addView(view, params);
 
         View titleView = LayoutInflater.from(context).inflate(R.layout.title_line, null);
@@ -139,6 +145,10 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
                     }
                 }
                 break;
+            case R.id.unload:
+                Intent intent = new Intent(context, LogingActivity.class);
+                context.startActivity(intent);
+                break;
         }
     }
 
@@ -149,12 +159,12 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
         STATE_LOADING(2), STATE_LOAD_ERROR(3), STATE_LOAD_EMPTY(4), STATE_LOAD_SUCCESS(5), STATE_UNLOAD(1);
         private final int currentState;
 
-        public int getCurrentState() {
-            return currentState;
-        }
-
         StateType(int currentState) {
             this.currentState = currentState;
+        }
+
+        public int getCurrentState() {
+            return currentState;
         }
     }
 }

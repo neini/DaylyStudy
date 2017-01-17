@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300px">
+
+
+    <ImageView
+        android:id="@+id/topicinfo_backgroud"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/topicinfo_title_img"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/normal_panding"
+        android:src="@mipmap/ic_launcher" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/login_magin"
+        android:layout_toRightOf="@+id/topicinfo_title_img">
+
+        <TextView
+            android:id="@+id/topicinto_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/topicinfo_title_img"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:id="@+id/topic_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topicinto_title"
+            android:layout_marginTop="@dimen/normal_panding"
+            android:layout_toRightOf="@+id/topicinfo_title_img"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_text_size" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topic_activity"
+            android:layout_toRightOf="@+id/topicinfo_title_img"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/usercount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/normal_panding"
+                android:drawableLeft="@mipmap/online"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_text_size" />
+
+            <TextView
+                android:id="@+id/postcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/login_magin"
+                android:layout_marginTop="@dimen/normal_panding"
+                android:drawableLeft="@mipmap/tiez"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_text_size" />
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <ImageView
+        android:id="@+id/topicinfo_img_add"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/normal_panding"
+        android:src="@mipmap/topic_focus" />
+
+</com.zhy.autolayout.AutoRelativeLayout>

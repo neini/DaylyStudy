@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    
+    <TextView 
+        
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:background="@drawable/my"
+      	android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:text="我的主页"
+        />
+    
+    <com.zhy.autolayout.AutoLinearLayout
+      
+        android:id="@+id/my_top_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/my2"
+        android:orientation="horizontal" >
+
+        <ImageView
+		    android:id="@+id/my_image"
+		    android:layout_width="96dp"
+		    android:layout_height="96dp"
+		    android:layout_marginLeft="47dp"
+		   android:layout_marginTop="15px"
+		   android:layout_marginBottom="30dp"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:src="@mipmap/head" />
+        
+        
+        <!--<com.zhy.autolayout.AutoRelativeLayoutyout-->
+            <!--android:visibility="gone"-->
+            <!--android:id="@+id/my_log_ll_show"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!---->
+         	<!--<TextView-->
+                    <!--android:id="@+id/my_unlog_tv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="编辑昵称"-->
+                    <!--android:textColor="#ffffff"-->
+                    <!--android:textSize="18sp" />-->
+         	<!---->
+         	<!--<ImageView -->
+         	    <!--android:id="@+id/my_log_iv"-->
+         	    <!--android:layout_width="wrap_content"-->
+         	    <!--android:layout_height="wrap_content"-->
+         	    <!--android:layout_marginRight="9dp"-->
+         	   <!--android:layout_alignParentRight="true"-->
+         	    <!--android:src="@drawable/dk"/>-->
+			<!--</com.zhy.autolayout.AutoRelativeLayoutyout>-->
+        
+        <com.zhy.autolayout.AutoLinearLayout
+            
+            android:id="@+id/my_unlog_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="15dp" >
+
+            <Button
+                android:id="@+id/My_top_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:background="@mipmap/landingbutton"
+                android:padding="10dp"
+               android:textColor="#ffffff"
+               android:layout_marginTop="42dp"
+                android:text="立即登录"
+                android:textSize="18sp" />
+
+
+            <TextView
+                    android:id="@+id/account"
+                    android:layout_marginTop="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="#ffffff"
+                    android:text="登陆后可云同步课程"
+                    android:textSize="12sp" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+    
+
+</com.zhy.autolayout.AutoLinearLayout>
+

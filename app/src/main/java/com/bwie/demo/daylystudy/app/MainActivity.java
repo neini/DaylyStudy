@@ -3,21 +3,15 @@ package com.bwie.demo.daylystudy.app;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-
 import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.base.BaseActivity;
 import com.bwie.demo.daylystudy.factoty.HomeFragmentFactoty;
 import com.bwie.demo.daylystudy.view.LazyViewPager;
-
-import java.util.List;
-
-import static android.R.id.list;
 
 public class MainActivity extends BaseActivity {
 
