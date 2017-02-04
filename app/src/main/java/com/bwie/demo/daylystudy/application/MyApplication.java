@@ -13,9 +13,11 @@ import static android.R.attr.x;
  */
 
 public class MyApplication extends Application {
-    private  static Context context;
+    private static Context context;
     private static Handler handler;
-    private  static int mainThreadId;
+    private static int mainThreadId;
+    public static boolean isLoging = false;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -27,18 +29,20 @@ public class MyApplication extends Application {
         mainThreadId = Process.myTid();
 
     }
-    public static Context getContext(){
-        return  context;
+
+    public static Context getContext() {
+        return context;
     }
 
-    public  static Handler getHandler(){
-        return  handler;
+    public static Handler getHandler() {
+        return handler;
     }
 
-    public static int getMainThreadId(){
-        return  mainThreadId;
+    public static int getMainThreadId() {
+        return mainThreadId;
     }
-    public static Thread getMainThread(){
-        return  Thread.currentThread();
+
+    public static Thread getMainThread() {
+        return Thread.currentThread();
     }
 }

@@ -1,6 +1,7 @@
 package com.bwie.demo.daylystudy.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,10 +13,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bwie.demo.daylystudy.R;
+import com.bwie.demo.daylystudy.app.LogingActivity;
 import com.bwie.demo.daylystudy.application.MyApplication;
 import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
+
+import org.greenrobot.eventbus.EventBus;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
@@ -46,9 +50,11 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
     private LayoutParams params;
     private View view;
     private AutoRelativeLayout re_sucess, loading, unload, empty, error;
+    private Context context;
 
     public ShowingPage(Context context) {
         super(context);
+        this.context = context;
         params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         view = LayoutInflater.from(context).inflate(R.layout.showinpager, null);
         re_sucess = (AutoRelativeLayout) view.findViewById(R.id.re_sucess);
@@ -58,6 +64,7 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
         error = (AutoRelativeLayout) view.findViewById(R.id.error);
         show_title = (AutoLinearLayout) view.findViewById(R.id.show_title);
         view.findViewById(R.id.showing_error_bt_reload).setOnClickListener(this);
+        view.findViewById(R.id.unload).setOnClickListener(this);
         this.addView(view, params);
 
         View titleView = LayoutInflater.from(context).inflate(R.layout.title_line, null);
@@ -137,6 +144,10 @@ public abstract class ShowingPage extends FrameLayout implements View.OnClickLis
                         onShowinPageListener.isShowPager(v);
                     }
                 }
+                break;
+            case R.id.unload:
+                Intent intent = new Intent(context, LogingActivity.class);
+                context.startActivity(intent);
                 break;
         }
     }

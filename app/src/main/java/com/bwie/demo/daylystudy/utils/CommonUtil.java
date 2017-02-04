@@ -470,4 +470,17 @@ public class CommonUtil {
         return sdf.format(new Date());
     }
 
+    //跳转
+    public static void jump(Context context, Class cla) {
+        Intent intent = new Intent(context, cla);
+        context.startActivity(intent);
+    }
+
+    //跳转
+    public static void jumpAndId(Context context, Class cla, String nid) {
+        Intent intent = new Intent(context, cla);
+        intent.putExtra("nid", nid);
+        context.startActivity(intent);
+    }
+
 }

@@ -13,6 +13,7 @@
         android:src="@mipmap/wunai" />
 
     <TextView
+        android:id="@+id/unload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/unload_img"

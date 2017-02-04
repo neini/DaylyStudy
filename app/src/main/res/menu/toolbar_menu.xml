@@ -6,4 +6,10 @@
         android:icon="@mipmap/abc_ic_search_api_mtrl_alpha"
         android:title="搜索"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/img_fatie"
+        android:icon="@mipmap/post_publish"
+        android:title="搜索"
+        android:visible="false"
+        app:showAsAction="always" />
 </menu>

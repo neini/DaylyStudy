@@ -67,7 +67,7 @@ public class MainActivity extends BaseActivity {
         main_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                for (int j = 0; j < main_rg.getChildCount()-1; j++) {
+                for (int j = 0; j < main_rg.getChildCount(); j++) {
                     RadioButton rb = (RadioButton) main_rg.getChildAt(j);
                     if (rb.getId() == i) {
                         main_lvp.setCurrentItem(j);
