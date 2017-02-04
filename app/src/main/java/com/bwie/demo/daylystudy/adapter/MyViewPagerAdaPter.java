@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.bwie.demo.daylystudy.DaoHangActivity;
+import com.bwie.demo.daylystudy.app.DaoHangActivity;
 import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.app.MainActivity;
 

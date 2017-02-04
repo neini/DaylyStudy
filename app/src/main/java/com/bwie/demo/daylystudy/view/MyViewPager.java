@@ -22,12 +22,7 @@ import java.util.ArrayList;
  */
 
 public class MyViewPager extends ViewPager {
- //   private DisplayImageOptions imageOptions;
-    private ArrayList<String> imgUrlList;
-    private ArrayList<ImageView> dotList;
-    private MyPagerAdapter myPagerAdapter;
     private static final int ROOL = 0;
-
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -40,6 +35,10 @@ public class MyViewPager extends ViewPager {
 
         }
     };
+ //   private DisplayImageOptions imageOptions;
+    private ArrayList<String> imgUrlList;
+    private ArrayList<ImageView> dotList;
+    private MyPagerAdapter myPagerAdapter;
     private OnPageClickListener onPageClickListener;
 
 
@@ -104,6 +103,24 @@ public class MyViewPager extends ViewPager {
         //自动轮播
         handler.sendEmptyMessageDelayed(ROOL, 2000);
 
+    }
+
+    //当前View不可见
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        //移除任务和消息
+        handler.removeCallbacksAndMessages(null);
+    }
+
+    //设置接口
+    public void setOnPageClickListener(OnPageClickListener onPageClickListener){
+        this.onPageClickListener = onPageClickListener;
+    }
+    //准备接口
+    public interface OnPageClickListener{
+
+        public void setOnPage(int position);
     }
 
     class MyPagerAdapter extends PagerAdapter {
@@ -172,21 +189,5 @@ public class MyViewPager extends ViewPager {
 //            super.destroyItem(container, position, object);
             container.removeView((View) object);
         }
-    }
-    //当前View不可见
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        //移除任务和消息
-        handler.removeCallbacksAndMessages(null);
-    }
-    //准备接口
-    public interface OnPageClickListener{
-
-        public void setOnPage(int position);
-    }
-    //设置接口
-    public void setOnPageClickListener(OnPageClickListener onPageClickListener){
-        this.onPageClickListener = onPageClickListener;
     }
 }

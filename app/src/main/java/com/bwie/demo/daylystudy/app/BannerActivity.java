@@ -1,14 +1,13 @@
-package com.bwie.demo.daylystudy;
+package com.bwie.demo.daylystudy.app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.bwie.demo.daylystudy.bean.HomeBean;
+import com.bwie.demo.daylystudy.R;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BannerActivity extends AppCompatActivity {
     Banner banner;

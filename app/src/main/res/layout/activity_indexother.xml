@@ -5,21 +5,21 @@
     android:background="#ffffff"
     android:orientation="vertical" >
     <TextView
-        android:textColor="#ffff00"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="9dp"
         android:layout_marginTop="10dp"
         android:background="@mipmap/study2"
+        android:textColor="#ffff00"
        android:textSize="18sp"
         />
     <com.bwie.demo.daylystudy.view.MyListVIew
-        android:listSelector="@android:color/transparent"    
-        android:layout_marginRight="7dp"
         android:id="@+id/other_listView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp" >
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="2dp"
+        android:listSelector="@android:color/transparent" >
     </com.bwie.demo.daylystudy.view.MyListVIew>
 
 </com.zhy.autolayout.AutoLinearLayout>

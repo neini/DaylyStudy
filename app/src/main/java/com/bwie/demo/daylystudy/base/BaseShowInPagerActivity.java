@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
 import com.bwie.demo.daylystudy.utils.ShowingPage;
 import com.zhy.autolayout.AutoLayoutActivity;
@@ -30,7 +29,7 @@ public abstract class BaseShowInPagerActivity extends AutoLayoutActivity {
 
             @Override
             protected void setTitleView(View view) {
-                BaseShowInPagerActivity.this.creatTitleView();
+                BaseShowInPagerActivity.this.creatTitleView(view);
             }
 
 
@@ -66,7 +65,7 @@ public abstract class BaseShowInPagerActivity extends AutoLayoutActivity {
 
     public abstract View creatSuccessView();
 
-    public abstract void creatTitleView();
+    public abstract void creatTitleView(View  view);
 
 
 }
