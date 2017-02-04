@@ -23,11 +23,13 @@ public interface Constants {
     String signIn = "http://www.meirixue.com";
     String signInArgs = "http://www.meirixue.com/api.php?c=login&a=index";
     // 注册接口获得短信的验证码
-    String signInCode = "http://www.meirixue.com/api.php?c=register&a=doregister";
+    String signInCode = "http://www.meirixue.com";
+    String signInCodeArgs = "api.php?c=register&a=doregister";
     // 短信重发接口
     String resend = "http://www.meirixue.com/api.php?c=register&a=resendmsg";
     // 注册激活接口
-    String register = "http://www.meirixue.com/api.php?c=register&a=verify";
+    String register = "http://www.meirixue.com";
+    String registerargs = "api.php?c=register&a=verify";
     // 找回密码接口
     String forgetPassWord = "http://www.meirixue.com/api.php?c=forget&a=doforget";
     // 手机修改密码

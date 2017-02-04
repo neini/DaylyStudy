@@ -35,10 +35,13 @@ public class HotContentHolder<T> extends RecyclerView.ViewHolder {
     public ImageView hotcontent_pinlun;
     public TextView hotcontent_pinlunshu;
     public AutoLinearLayout hotcontent_tids;
+    public View item;
 
     public HotContentHolder(View itemView) {
         super(itemView);
         AutoUtils.autoSize(itemView);
+        //条目
+        item = itemView;
         //用户头像
         hotcontent_icon_img = (ImageView) itemView.findViewById(R.id.hotcontent_icon_img);
         //用户名

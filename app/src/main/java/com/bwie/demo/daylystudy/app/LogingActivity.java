@@ -30,6 +30,7 @@ import java.util.Map;
 
 import static android.R.attr.data;
 import static com.bwie.demo.daylystudy.R.id.login_bt_login;
+import static com.bwie.demo.daylystudy.R.id.re_sucess;
 
 
 public class LogingActivity extends BaseActivity implements View.OnClickListener {
@@ -133,6 +134,7 @@ public class LogingActivity extends BaseActivity implements View.OnClickListener
                 break;
             //注册
             case R.id.login_bt_zuce:
+                CommonUtil.jump(this, RegistActivity.class);
                 break;
             //QQ登录
             case R.id.qq:
