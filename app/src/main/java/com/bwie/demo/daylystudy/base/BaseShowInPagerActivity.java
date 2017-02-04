@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
 import com.bwie.demo.daylystudy.utils.ShowingPage;
+import com.google.gson.Gson;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 /**
