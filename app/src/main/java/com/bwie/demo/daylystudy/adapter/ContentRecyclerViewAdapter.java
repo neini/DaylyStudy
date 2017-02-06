@@ -64,6 +64,23 @@ public class ContentRecyclerViewAdapter extends RecyclerView.Adapter<HotContentH
         holder.hotcontent_tv_title.setText(dataBean.getP_title());
         holder.hotcontent_tv_usename.setText(dataBean.getUser_name());
         GLideUtils.loadCrileImg(dataBean.getUser_small_log(), holder.hotcontent_icon_img);
+        //头像点击事件
+        holder.hotcontent_icon_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.show(context, "点击了头像");
+            }
+        });
+        //条目点击
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.show(context, "点击了条目");
+            }
+        });
+
+
+
         if (dataBean.getP_leaderette() != null) {
             holder.hotcontent_tv_leaderette.setText(dataBean.getP_leaderette());
         } else {

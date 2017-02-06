@@ -2,10 +2,129 @@
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_regist"
-    android:background="@color/linear_divider_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/linear_divider_color"
     android:orientation="vertical">
-    <include layout="@layout/title_line_login"/>
+
+    <include layout="@layout/title_line_login" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_magin">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/normal_panding">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/name" />
+
+            <EditText
+                android:id="@+id/regesit_et_usernum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/normal_panding"
+                android:background="@null"
+                android:hint="手机号码（即账号）" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:id="@+id/regest_tv_sendyzm"
+            android:layout_marginRight="@dimen/normal_panding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="发送验证码" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="@dimen/normal_panding" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/normal_panding">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/numb" />
+
+        <EditText
+            android:id="@+id/regesit_et_yzm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_panding"
+            android:background="@null"
+            android:hint="6位验证码"
+            android:password="true" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/normal_panding">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/code" />
+
+        <EditText
+            android:id="@+id/regesit_et_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_panding"
+            android:background="@null"
+            android:hint="设置密码"
+            android:password="true" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="@dimen/normal_panding" />
+
+    <TextView
+        android:id="@+id/regest_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/normal_panding"
+      />
+
+    <Button
+        android:id="@+id/regist_bt_tijiao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normal_panding"
+        android:layout_marginRight="@dimen/normal_panding"
+        android:layout_marginTop="100px"
+        android:background="@color/red"
+        android:text="提交"
+        android:textSize="@dimen/title_size" />
+    <TextView
+        android:text="注册即表示已阅读并同意 《用户协议与隐私政策》"
+        android:id="@+id/regest_tv_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/normal_panding"
+ />
 
 </com.zhy.autolayout.AutoLinearLayout>

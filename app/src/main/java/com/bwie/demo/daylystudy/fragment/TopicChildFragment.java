@@ -1,8 +1,11 @@
 package com.bwie.demo.daylystudy.fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +14,8 @@ import android.view.View;
 
 import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.adapter.ContentRecyclerViewAdapter;
+import com.bwie.demo.daylystudy.app.TopicInfoActivtity;
+import com.bwie.demo.daylystudy.application.MyApplication;
 import com.bwie.demo.daylystudy.base.BaseData;
 import com.bwie.demo.daylystudy.base.BaseNetFragment;
 import com.bwie.demo.daylystudy.bean.HotContentBean;
@@ -27,12 +32,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.bwie.demo.daylystudy.R.id.springView;
+
 /**
  * Created by ${薛亚南}
  * on 2017/1/15 21：14.
  */
 
-public class TopicChildFragment extends BaseNetFragment {
+public class TopicChildFragment extends BaseNetFragment implements AppBarLayout.OnOffsetChangedListener {
 
     private View view;
     private String tid;
@@ -92,7 +99,6 @@ public class TopicChildFragment extends BaseNetFragment {
             @Override
             public void onLoadmore() {
                 ++page;
-                Log.i("TAG", "page***" + page);
                 getData();
             }
         });
@@ -127,27 +133,68 @@ public class TopicChildFragment extends BaseNetFragment {
     public void setTitleView1(View view) {
         view.setVisibility(View.GONE);
     }
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+      //  LogEx.L("setUserVisibleHint---" + isVisibleToUser + mParam1);
+
+        /**
+         * 这段代码是为了解决springview 和tabBarLayout中嵌套时上下滚动冲突
+         */
+        if (isVisibleToUser && this.getContext() != null) {
+            if (   ((TopicInfoActivtity) getActivity()).appBarLayout != null) {
+                ((TopicInfoActivtity) getActivity()).appBarLayout.addOnOffsetChangedListener(this);
+            }
+        }else if (isVisibleToUser && this.getContext() == null) {
+            //viewpager中第一页加载的太早,getContext还拿不到,做个延迟
+            new Handler().post(new Runnable() {
+
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (TopicChildFragment.this.getContext() != null) {
+
+                      //  MyApplication application = (MyApplication) TopicChildFragment.this.getContext().getApplicationContext();
+                        if ( ((TopicInfoActivtity) getActivity()).appBarLayout != null) {
+                            ((TopicInfoActivtity) getActivity()).appBarLayout.addOnOffsetChangedListener(TopicChildFragment.this);
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+
+    @Override
+    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+        hotchild_springview.setEnable(verticalOffset == 0);
+    }
 
     class MyBaseData extends BaseData {
         private int lastPosition = 0;
 
         @Override
         public void onSucesss(final String data) {
-            if (data != null) {
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        showCurrentView(ShowingPage.StateType.STATE_LOAD_SUCCESS);
-                        HotContentBean hotContentBean = gson.fromJson(data, HotContentBean.class);
-                        List<HotContentBean.DataBean> hotContentBeanList = hotContentBean.getData();
-                        lastPosition = hotList.size() - 1;
-                        hotList.addAll(hotContentBeanList);
-                        contentRecyclerViewAdapter = new ContentRecyclerViewAdapter(hotList, getActivity());
-                        hotchild_recyclerview.setAdapter(contentRecyclerViewAdapter);
-                        hotchild_recyclerview.scrollToPosition(lastPosition);
-                    }
-                });
-            }
+            if (showingPage != null)
+                if (data != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            showCurrentView(ShowingPage.StateType.STATE_LOAD_SUCCESS);
+                            HotContentBean hotContentBean = gson.fromJson(data, HotContentBean.class);
+                            List<HotContentBean.DataBean> hotContentBeanList = hotContentBean.getData();
+                            lastPosition = hotList.size() - 1;
+                            hotList.addAll(hotContentBeanList);
+                            contentRecyclerViewAdapter = new ContentRecyclerViewAdapter(hotList, getActivity());
+                            hotchild_recyclerview.setAdapter(contentRecyclerViewAdapter);
+                            hotchild_recyclerview.scrollToPosition(lastPosition);
+                        }
+                    });
+                }
         }
 
         @Override

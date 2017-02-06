@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -60,6 +61,7 @@ public class TopicInfoActivtity extends BaseActivity {
     private int page;
     private Gson gson;
     private String[] str = {"最新", "最热"};
+    public  AppBarLayout appBarLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,6 +119,7 @@ public class TopicInfoActivtity extends BaseActivity {
 
     //找控件
     public void initView() {
+        appBarLayout = (AppBarLayout) findViewById(R.id.appbarLayout);
         //图片背景
         topicinfo_backgroud = (ImageView) findViewById(R.id.topicinfo_backgroud);
         //图片
