@@ -1,4 +1,4 @@
-package com.bwie.demo.daylystudy;
+package com.bwie.demo.daylystudy.app;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,8 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.adapter.MyViewPagerAdaPter;
-import com.bwie.demo.daylystudy.app.MainActivity;
 
 import java.util.ArrayList;
 

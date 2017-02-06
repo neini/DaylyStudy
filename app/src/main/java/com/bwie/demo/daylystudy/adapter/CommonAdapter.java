@@ -13,10 +13,10 @@ import java.util.List;
  * Created by johpo on 2016/12/2 0002.
  */
 public abstract class CommonAdapter<T> extends BaseAdapter {
+    protected final int mItemLayoutId;
     protected LayoutInflater mInflater;
     protected Context mContext;
     protected List<T> mDatas;
-    protected final int mItemLayoutId;
 
     public CommonAdapter(Context context, List<T> mDatas, int itemLayoutId)
     {

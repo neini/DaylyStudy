@@ -14,7 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bwie.demo.daylystudy.R;
-import com.bwie.demo.daylystudy.XiangQingActivity;
+import com.bwie.demo.daylystudy.app.XiangQingActivity;
 import com.bwie.demo.daylystudy.adapter.CommonAdapter;
 import com.bwie.demo.daylystudy.adapter.ViewHolder;
 import com.bwie.demo.daylystudy.base.BaseData;

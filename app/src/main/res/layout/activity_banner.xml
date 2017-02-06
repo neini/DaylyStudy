@@ -4,7 +4,7 @@
     android:id="@+id/activity_banner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bwie.demo.daylystudy.BannerActivity">
+    tools:context="com.bwie.demo.daylystudy.app.BannerActivity">
     <com.youth.banner.Banner
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/banner"

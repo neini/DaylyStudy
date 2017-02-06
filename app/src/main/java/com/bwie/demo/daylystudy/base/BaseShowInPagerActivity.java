@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
 import com.bwie.demo.daylystudy.utils.ShowingPage;
 import com.google.gson.Gson;
@@ -68,7 +67,7 @@ public abstract class BaseShowInPagerActivity extends AutoLayoutActivity {
 
     public abstract View creatSuccessView();
 
-    public abstract void creatTitleView(View view);
+    public abstract void creatTitleView(View  view);
 
 
 }

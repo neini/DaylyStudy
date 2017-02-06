@@ -1,4 +1,4 @@
-package com.bwie.demo.daylystudy;
+package com.bwie.demo.daylystudy.app;
 
 import android.content.Context;
 import android.widget.ImageView;

@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ffffff"
-    android:orientation="vertical" >
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="44dp"
-        android:background="#f95d51">
+    android:orientation="vertical">
+    <!--<com.zhy.autolayout.AutoRelativeLayout-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="44dp"-->
+    <!--android:background="#f95d51">-->
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="课程列表"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
+    <!--<TextView-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:gravity="center"-->
+    <!--android:text="课程列表"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="20sp" />-->
 
 
-        <com.zhy.autolayout.AutoRelativeLayout
-            android:id="@+id/sort_top_search"
-            android:layout_width="40dp"
-            android:layout_height="fill_parent"
-            android:layout_alignParentRight="true">
+    <!--<com.zhy.autolayout.AutoRelativeLayout-->
+    <!--android:id="@+id/sort_top_search"-->
+    <!--android:layout_width="40dp"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_alignParentRight="true">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:background="@mipmap/glass" />
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:background="@mipmap/glass" />-->
 
-        </com.zhy.autolayout.AutoRelativeLayout>
+    <!--</com.zhy.autolayout.AutoRelativeLayout>-->
 
-    </com.zhy.autolayout.AutoRelativeLayout>
+    <!--</com.zhy.autolayout.AutoRelativeLayout>-->
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/course_list_ll"
             android:layout_width="0dp"
             android:layout_height="44dp"
 
-            android:gravity="center_horizontal"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <TextView
@@ -58,33 +58,31 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"
-                android:textSize="16dp"
                 android:textColor="#333333"
-                />
+                android:textSize="16dp" />
 
             <ImageView
                 android:id="@+id/course_list_total_iv"
-                android:layout_marginLeft="6dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                />
+                android:layout_marginLeft="6dp" />
 
 
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
         <View
             android:layout_width="0.5dp"
             android:layout_height="44dp"
-            android:background="#cacaca"/>
+            android:background="#cacaca" />
 
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/course_list_ll_Filter"
             android:layout_width="0dp"
             android:layout_height="44dp"
-            android:gravity="center_horizontal"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <TextView
@@ -92,32 +90,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
+                android:text="筛选"
                 android:textColor="#333333"
-                android:text="筛选"/>
+                android:textSize="16dp" />
 
             <ImageView
                 android:id="@+id/course_list_filter_iv"
-                android:layout_marginLeft="6dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                />
+                android:layout_marginLeft="6dp" />
 
 
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
         <View
             android:layout_width="0.5dp"
             android:layout_height="44dp"
-            android:background="#cacaca"/>
+            android:background="#cacaca" />
 
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/course_list_ll_sort"
             android:layout_width="0dp"
             android:layout_height="44dp"
-            android:gravity="center_horizontal"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <TextView
@@ -125,27 +122,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="16dp"
+                android:text="排序"
                 android:textColor="#333333"
-                android:text="排序"/>
+                android:textSize="16dp" />
 
             <ImageView
                 android:id="@+id/course_list_sort_iv"
-                android:layout_marginLeft="6dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                />
+                android:layout_marginLeft="6dp" />
 
 
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
-        android:background="#cacaca"/>
+        android:background="#cacaca" />
 
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/sort_spring"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <com.bwie.demo.daylystudy.view.MyListVIew
+            android:id="@+id/sort_class_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.liaoinstan.springview.widget.SpringView>
+
+</com.zhy.autolayout.AutoLinearLayout>

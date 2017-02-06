@@ -1,10 +1,12 @@
-package com.bwie.demo.daylystudy;
+package com.bwie.demo.daylystudy.app;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.bwie.demo.daylystudy.R;
 
 public class XiangQingActivity extends AppCompatActivity {
 private ImageView setting_back;
