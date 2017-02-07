@@ -58,6 +58,7 @@ public class MyAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent=new Intent(context, SortActivity.class);
                 intent.putExtra("name",list.get(position).getCategory_name());
+                intent.putExtra("cid",list.get(position).getId());
                 intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

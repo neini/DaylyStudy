@@ -1,7 +1,5 @@
 package com.bwie.demo.daylystudy.utils;
 
-import android.util.Log;
-
 import com.bwie.demo.daylystudy.interfaces.RequestAPI;
 
 import java.util.Map;
@@ -11,12 +9,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
-
-import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
-
-import static android.R.string.ok;
 
 /**
  * Created by ${薛亚南}
@@ -84,5 +77,6 @@ public class HttpUtils {
         });
 
     }
+
 
 }

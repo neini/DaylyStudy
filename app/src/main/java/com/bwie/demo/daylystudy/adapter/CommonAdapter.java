@@ -18,8 +18,7 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     protected Context mContext;
     protected List<T> mDatas;
 
-    public CommonAdapter(Context context, List<T> mDatas, int itemLayoutId)
-    {
+    public CommonAdapter(Context context, List<T> mDatas, int itemLayoutId){
         this.mContext = context;
         this.mInflater = LayoutInflater.from(mContext);
         this.mDatas = mDatas;

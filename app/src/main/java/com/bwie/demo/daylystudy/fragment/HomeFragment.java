@@ -370,7 +370,6 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         home_recomm_top_iv2 = (ImageView) view.findViewById(R.id.home_recomm_top_iv2);
         home_recommend_lv = (ListView) view.findViewById(R.id.home_recommend_lv);
         //大家
-
         other_listView = (ListView) view.findViewById(R.id.other_listView);
         return view;
 
