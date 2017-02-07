@@ -142,7 +142,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         return view;
     }
     private void initDaJia(HomeBean homebean) {
-       final List<HomeBean.DataBean.IndexothersBean> ib = homebean.getData().getIndexothers();
+        final List<HomeBean.DataBean.IndexothersBean> ib = homebean.getData().getIndexothers();
         other_listView .setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -167,7 +167,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
 
     private void initXiaoBian(HomeBean homebean) {
         List<HomeBean.DataBean.IndexrecommendBean.TopBean> tb = homebean.getData().getIndexrecommend().getTop();
-       final List<HomeBean.DataBean.IndexrecommendBean.ListviewBean> lb = homebean.getData().getIndexrecommend().getListview();
+        final List<HomeBean.DataBean.IndexrecommendBean.ListviewBean> lb = homebean.getData().getIndexrecommend().getListview();
         ivlist3.add(home_recomm_top_iv1);
         ivlist3.add(home_recomm_top_iv2);
        /* home_recommend_lv.setOnClickListener(new View.OnClickListener() {
@@ -245,7 +245,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(),KeChengXQActivity.class);
                 intent.putExtra("url",ad.get(0).getUrl());
-              //  Log.i("AAAAAAA","....."+adl.get(position).getUrl());
+                //  Log.i("AAAAAAA","....."+adl.get(position).getUrl());
                 getActivity().startActivity(intent);
             }
         });
@@ -297,17 +297,17 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         myViewPager.setOnPageClickListener(new MyViewPager.OnPageClickListener() {
             @Override
             public void setOnPage(int position) {
-                  if(adl.get(position).getStype().equals("5")) {
-                      Intent intent = new Intent(getActivity(), XiangQingActivity.class);
-                      intent.putExtra("url", adl.get(position).getUrl() + "");
-                      Log.i("AAAAAAA", "....." + adl.get(position).getUrl());
-                      getActivity().startActivity(intent);
-                  }else if(adl.get(position).getStype().equals("1")){
-                      Intent intent = new Intent(getActivity(), KeChengXQActivity.class);
-                      intent.putExtra("url", adl.get(position).getUrl() + "");
-                      Log.i("AAAAAAA", "....." + adl.get(position).getUrl());
-                      getActivity().startActivity(intent);
-                  }
+                if(adl.get(position).getStype().equals("5")) {
+                    Intent intent = new Intent(getActivity(), XiangQingActivity.class);
+                    intent.putExtra("url", adl.get(position).getUrl() + "");
+                    Log.i("AAAAAAA", "....." + adl.get(position).getUrl());
+                    getActivity().startActivity(intent);
+                }else if(adl.get(position).getStype().equals("1")){
+                    Intent intent = new Intent(getActivity(), KeChengXQActivity.class);
+                    intent.putExtra("url", adl.get(position).getUrl() + "");
+                    Log.i("AAAAAAA", "....." + adl.get(position).getUrl());
+                    getActivity().startActivity(intent);
+                }
             }
         });
     }
@@ -403,7 +403,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         home_recomm_top_iv2 = (ImageView) view.findViewById(R.id.home_recomm_top_iv2);
         home_recommend_lv = (ListView) view.findViewById(R.id.home_recommend_lv);
 
-                //大家
+        //大家
 
         other_listView = (ListView) view.findViewById(R.id.other_listView);
         return view;

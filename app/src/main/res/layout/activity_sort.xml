@@ -143,15 +143,15 @@
         android:layout_height="0.5dp"
         android:background="#cacaca" />
 
-    <com.liaoinstan.springview.widget.SpringView
+    <ScrollView
         android:id="@+id/sort_spring"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <com.bwie.demo.daylystudy.view.MyListVIew
             android:id="@+id/sort_class_listview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </com.liaoinstan.springview.widget.SpringView>
+    </ScrollView>
 
 </com.zhy.autolayout.AutoLinearLayout>

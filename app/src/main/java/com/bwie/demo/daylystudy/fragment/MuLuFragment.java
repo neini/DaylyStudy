@@ -1,11 +1,8 @@
 package com.bwie.demo.daylystudy.fragment;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +15,6 @@ import com.bwie.demo.daylystudy.R;
 import com.bwie.demo.daylystudy.app.KeChengXQActivity;
 import com.bwie.demo.daylystudy.base.BaseData;
 import com.bwie.demo.daylystudy.base.BaseFragment;
-import com.bwie.demo.daylystudy.bean.HotTitleBean;
-import com.bwie.demo.daylystudy.bean.KeChengBean;
 import com.bwie.demo.daylystudy.bean.MuLuBean;
 import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
 import com.bwie.demo.daylystudy.utils.CommonUtil;
@@ -27,7 +22,6 @@ import com.bwie.demo.daylystudy.utils.Constants;
 import com.bwie.demo.daylystudy.utils.ShowingPage;
 import com.google.gson.Gson;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
