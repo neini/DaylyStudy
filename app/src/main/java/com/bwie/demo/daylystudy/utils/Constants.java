@@ -1,6 +1,9 @@
 package com.bwie.demo.daylystudy.utils;
 
 public interface Constants {
+    //课程详情
+    String ke="http://www.meirixue.com";
+    String kecheng="http://www.meirixue.com/api.php?c=course&a=getCourseInfo";
     //话题详情最热最新
     String topichot = "http://www.meirixue.com";
     String topichotargs = "api.php?c=circle&a=getCirclePostList";
@@ -13,6 +16,12 @@ public interface Constants {
     //热门标题接口
     public static String HOTTITLE = "http://www.meirixue.com";
     public static String HOTTTITLEARGS = "api.php?c=circle&a=getRecommendTag";
+    //课程详情
+    String mu="http://www.meirixue.com";
+    String mulu="http://www.meirixue.com/api.php?c=course&a=getCourseStep";
+    //点击
+    String dian="http://www.meirixue.com";
+    String dianji="http://www.meirixue.com/api.php?c=activity&a=getActivityBak";
     //首页的接口
     String shouye = "http://www.meirixue.com";
     String shouye3 = "http://www.meirixue.com/api.php?a=indexv9&c=index";

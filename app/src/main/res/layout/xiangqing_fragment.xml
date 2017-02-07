@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+ android:orientation="vertical"
+>
+<!-- <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/gray"
+        android:layout_height="wrap_content">
+
+     <TextView
+         android:id="@+id/tv_course_detail_totaltime"
+         android:layout_width="0dp"
+         android:layout_weight="1"
+         android:layout_height="wrap_content"
+         android:text="讲师："
+         android:textColor="@color/white"
+       android:gravity="center"
+         android:drawableLeft="@mipmap/teacher"
+         android:textSize="13sp" />
+
+     <TextView
+        android:id="@+id/tv_course_detail_grade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="学校："
+         android:gravity="center"
+        android:drawableLeft="@mipmap/school"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+    </com.zhy.autolayout.AutoLinearLayout>-->
+<!--    <ListView
+        android:layout_below="@id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>-->
+<!--    <?xml version="1.0" encoding="utf-8"?>
+    <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">-->
+
+        <!--详情-->
+     <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/details_layout_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+         >-->
+
+       <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80px"
+                android:background="#f1f1f1"
+                android:orientation="horizontal">
+
+               <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="20px"
+                        android:src="@mipmap/teacher" />
+
+                    <TextView
+                        android:id="@+id/details_tv_teacher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="讲师:刘洁，赵开抒" />
+
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="20px"
+                        android:src="@mipmap/school" />
+
+                    <TextView
+                        android:id="@+id/details_tv_scholl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="学校:优秀教育" />
+                </com.zhy.autolayout.AutoLinearLayout>
+            </com.zhy.autolayout.AutoLinearLayout>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:padding="20px"
+                android:text="【课程亮点】"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/details_tv_Highlights"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:padding="20px"
+                android:text="啊啥电话就卡死华东科技啊啥都会尽快按时阿"
+                android:textColor="#000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:padding="20px"
+                android:text="【课程简介】"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/details_tv_brief_introduction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:padding="20px"
+                android:text="啊啥电话就卡死华东科技啊啥都会尽快按时阿"
+                android:textColor="#000" />
+
+    </com.zhy.autolayout.AutoLinearLayout>-->
+
+      <!--  &lt;!&ndash;目录&ndash;&gt;
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/details_layout_catalog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f1f1f1">
+                <TextView
+                    android:id="@+id/details_fragment_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20px"
+                    android:text="第一章：10种建筑拍摄技巧"
+                    android:textColor="#000"
+                    android:textSize="30px" />
+            </com.zhy.autolayout.AutoLinearLayout>
+            <ListView
+                android:id="@+id/details_fragment_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ListView>
+        </com.zhy.autolayout.AutoLinearLayout>-->
+
+  <!--  </com.zhy.autolayout.AutoLinearLayout>-->
+
+</com.zhy.autolayout.AutoRelativeLayout>

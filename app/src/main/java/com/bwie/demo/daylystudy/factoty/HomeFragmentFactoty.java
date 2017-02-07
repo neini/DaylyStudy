@@ -8,7 +8,10 @@ import com.bwie.demo.daylystudy.fragment.EyeFragment;
 import com.bwie.demo.daylystudy.fragment.HomeFragment;
 import com.bwie.demo.daylystudy.fragment.HotFragment;
 import com.bwie.demo.daylystudy.fragment.MineFragment;
+import com.bwie.demo.daylystudy.fragment.MuLuFragment;
+import com.bwie.demo.daylystudy.fragment.PingJiaFragment;
 import com.bwie.demo.daylystudy.fragment.TopicFragment;
+import com.bwie.demo.daylystudy.fragment.XiangQingFragment;
 
 import java.util.HashMap;
 
@@ -47,6 +50,15 @@ public class HomeFragmentFactoty {
                 break;
             case "关注":
                 fragment = new EyeFragment();
+                break;
+            case "详情":
+                fragment = new XiangQingFragment();
+                break;
+            case "目录":
+                fragment = new MuLuFragment();
+                break;
+            case "评价":
+                fragment = new PingJiaFragment();
                 break;
 
         }

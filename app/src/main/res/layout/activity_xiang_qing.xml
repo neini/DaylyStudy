@@ -1,271 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="vertical" >
-
-    <FrameLayout
-        android:id="@+id/frame_course_detail"
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/springView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <LinearLayout
-            android:id="@+id/linear_activity_course_detail"
+        android:layout_height="match_parent">
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:orientation="vertical" >
-
-            <LinearLayout
+            android:fillViewport="true"
+            >
+            <com.zhy.autolayout.AutoLinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/red"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp" >
-
-                    <ImageView
-                        android:id="@+id/setting_back"
-                        android:layout_width="45dp"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                        android:paddingRight="20dp"
-                        android:src="@mipmap/back" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                        android:gravity="center"
-                        android:text="课程详情"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/activity_text_size" />
-
-                    <ImageView
-                        android:id="@+id/share"
-                        android:layout_width="45dp"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:paddingRight="20dp"
-                        android:src="@mipmap/share" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <!--   <include
-                   android:id="@+id/frame_loading"
-                   layout="@layout/mrx_loading" />-->
-
-         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="10dp" >
-
-                 <FrameLayout
-                    android:id="@+id/iv_course_detail_pic"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="3" >
-                    <ImageView
-                        android:id="@+id/iv_course_detail_play"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/ic_launcher" />
-                </FrameLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2" >
-
-                    <TextView
-                        android:id="@+id/tv_course_detail_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="5dp"
-                        android:text="哈哈"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/tv_course_detail_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
-                        android:paddingBottom="32dp"
-                        android:textColor="#62e115"
-                        android:textSize="12sp"
-                        android:visibility="invisible" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="10dp"
-                android:background="#7f7f7f"
-                android:orientation="horizontal"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin" >
-
-                <TextView
-                    android:id="@+id/tv_course_detail_totaltime"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="免费"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/tv_course_detail_grade"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="免费"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/tv_course_detail_person_num"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="免费"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
-            </LinearLayout>
-
-            <RadioGroup
-                android:id="@+id/rg_course_detail"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="#fff"
-                android:divider="?android:attr/dividerHorizontal"
-                android:orientation="horizontal"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp"
-                android:showDividers="middle" >
-
-                <RadioButton
-                    android:id="@+id/rb_course_detail_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:paddingLeft="0dp"
-                    android:text="详情"
-                    android:textColor="@drawable/color_radiobutton_selector"
-                    android:textSize="14sp" />
-
-                <RadioButton
-                    android:id="@+id/rb_course_detail_catalog"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:paddingLeft="0dp"
-                    android:text="目录"
-                    android:textColor="@drawable/color_radiobutton_selector"
-                    android:textSize="14sp" />
-
-                <RadioButton
-                    android:id="@+id/rb_course_detail_comment"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:paddingLeft="0dp"
-                    android:text="评论"
-                    android:textColor="@drawable/color_radiobutton_selector"
-                    android:textSize="14sp" />
-            </RadioGroup>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#7f7f7f"
-                    android:orientation="horizontal"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_gravity="bottom"
-                    android:background="#c8c8c8" />
-            </FrameLayout>
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/vp_course_detail"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:background="@color/white" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#d9d9d9" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@color/common_background_color" >
-
+                android:orientation="vertical"
+                android:layout_height="match_parent">
                 <ImageView
-                    android:id="@+id/iv_course_detail_collect"
-                    android:layout_width="48dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:src="@drawable/collect_radiobutton_bg_selector" />
-
-                <Button
-                    android:id="@+id/btn_course_detail_join"
+                    android:id="@+id/tu"
+                    android:layout_width="match_parent"
+                    android:layout_height="280px"
+                    android:src="@mipmap/ic_launcher" />
+                <TextView
+                    android:id="@+id/tv_miaoshu"
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="6dp"
-                    android:background="@drawable/study"
-                    android:gravity="center"
-                    android:text="参与课程"
-                    android:textColor="@color/white"
-                    android:textSize="15dp" />
-            </RelativeLayout>
-        </LinearLayout>
-    </FrameLayout>
-
-</LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:text="女神修炼课"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="哈哈"
+                    android:textColor="@color/red"
+                    android:textSize="14sp" />
+                <com.bwie.demo.daylystudy.view.MyListVIew
+                    android:listSelector="@android:color/transparent"
+                    android:layout_marginRight="7dp"
+                    android:id="@+id/listView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" >
+                </com.bwie.demo.daylystudy.view.MyListVIew>
+            </com.zhy.autolayout.AutoLinearLayout>
+        </ScrollView>
+    </com.liaoinstan.springview.widget.SpringView>
+</com.zhy.autolayout.AutoLinearLayout>
 

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!--左-->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="0px"
+        android:layout_height="150px"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lv_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-1" />
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <!--中-->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150px"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="2px"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:background="#f00" />
+
+        <com.bwie.demo.daylystudy.view.MyCicrleView
+            android:layout_width="40px"
+            android:layout_height="40px" />
+
+        <View
+            android:layout_width="2px"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:background="#f00" />
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <!--右-->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="0px"
+        android:layout_height="150px"
+        android:layout_marginLeft="20px"
+        android:orientation="vertical"
+        android:layout_weight="0.8">
+
+        <TextView
+            android:id="@+id/lv_tv_name"
+            android:layout_marginTop="10px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="晚间护肤品分享"
+            android:padding="20px"
+            />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50px"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:src="@mipmap/video"/>
+
+            <TextView
+                android:id="@+id/lv_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20px"
+                android:text="3:58"
+                android:layout_height="wrap_content" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>
+

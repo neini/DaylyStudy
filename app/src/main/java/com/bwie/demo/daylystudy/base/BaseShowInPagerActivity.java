@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.bwie.demo.daylystudy.interfaces.OnShowinPageListener;
 import com.bwie.demo.daylystudy.utils.ShowingPage;
-import com.google.gson.Gson;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 /**
@@ -17,12 +16,11 @@ import com.zhy.autolayout.AutoLayoutActivity;
 public abstract class BaseShowInPagerActivity extends AutoLayoutActivity {
 
     public ShowingPage showingPage;
-    public Gson gson;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        gson = new Gson();
+
         showingPage = new ShowingPage(this) {
             @Override
             protected View createSuccessView() {
@@ -67,7 +65,8 @@ public abstract class BaseShowInPagerActivity extends AutoLayoutActivity {
 
     public abstract View creatSuccessView();
 
-    public abstract void creatTitleView(View  view);
+    public abstract void creatTitleView(View view
+    );
 
 
 }
