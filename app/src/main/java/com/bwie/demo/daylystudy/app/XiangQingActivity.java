@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -68,7 +69,16 @@ public class XiangQingActivity extends BaseShowInPagerActivity implements Spring
      }
         tv_miaoshu.setText(dianjibean.getDesc());
         tv_title.setText(dianjibean.getDataList().get(0).getTitle());
-        List<DianJiBean.DataListBean.ListBean> db=dianjibean.getDataList().get(0).getList();
+      final  List<DianJiBean.DataListBean.ListBean> db=dianjibean.getDataList().get(0).getList();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(XiangQingActivity.this,KeChengXQActivity.class);
+                intent.putExtra("url",db.get(position).getCid());
+                //  Log.i("AAAAAAA","....."+adl.get(position).getUrl());
+              startActivity(intent);
+            }
+        });
         CommonAdapter com= new CommonAdapter<DianJiBean.DataListBean.ListBean>(this, db, R.layout.list_item) {
          @Override
             public void convert(ViewHolder helper, DianJiBean.DataListBean.ListBean item) {
