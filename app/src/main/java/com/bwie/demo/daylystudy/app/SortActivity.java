@@ -1,12 +1,15 @@
 package com.bwie.demo.daylystudy.app;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
@@ -27,6 +30,7 @@ import com.bwie.demo.daylystudy.bean.XqBean;
 import com.bwie.demo.daylystudy.utils.CommonUtil;
 import com.bwie.demo.daylystudy.utils.Constants;
 import com.bwie.demo.daylystudy.utils.ShowingPage;
+import com.bwie.demo.daylystudy.utils.ToastUtil;
 import com.bwie.demo.daylystudy.view.MyListVIew;
 import com.google.gson.Gson;
 
@@ -86,9 +90,18 @@ public class SortActivity extends BaseShowInPagerActivity implements View.OnClic
                                         public void onSucesss(String data) {
                                             Gson gson=new Gson();
                                             xqBean = gson.fromJson(data,XqBean.class);
-                                            List<XqBean.DatalistBean> datalist = xqBean.getDatalist();
+                                            final List<XqBean.DatalistBean> datalist = xqBean.getDatalist();
                                             xqAdapter = new XqAdapter(SortActivity.this,datalist);
                                             sort_class_listview.setAdapter(xqAdapter);
+                                            sort_class_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                                @Override
+                                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                    Intent intent=new Intent(SortActivity.this,KeChengXQActivity.class);
+                                                    String cid = datalist.get(position).getCid();
+                                                    intent.putExtra("url",cid);
+                                                    startActivity(intent);
+                                                }
+                                            });
                                         }
 
                                         @Override
@@ -104,6 +117,9 @@ public class SortActivity extends BaseShowInPagerActivity implements View.OnClic
             });
         }
     };
+    private View popur_item_two;
+    private TextView mianfei;
+    private TextView shoufei;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,13 +141,25 @@ public class SortActivity extends BaseShowInPagerActivity implements View.OnClic
         map = new HashMap<>();
         map.put("cid",cid+"");
         new BaseData() {
+
+            private List<XqBean.DatalistBean> datalist;
+
             @Override
             public void onSucesss(String data) {
                 Gson gson=new Gson();
                 xqBean = gson.fromJson(data,XqBean.class);
-                List<XqBean.DatalistBean> datalist = xqBean.getDatalist();
-                xqAdapter = new XqAdapter(SortActivity.this,datalist);
+                datalist = xqBean.getDatalist();
+                xqAdapter = new XqAdapter(SortActivity.this, datalist);
                 sort_class_listview.setAdapter(xqAdapter);
+                sort_class_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent=new Intent(SortActivity.this,KeChengXQActivity.class);
+                        String cid = datalist.get(position).getCid();
+                        intent.putExtra("url",cid);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
@@ -145,7 +173,25 @@ public class SortActivity extends BaseShowInPagerActivity implements View.OnClic
 
     @Override
     public void creatTitleView(View view) {
+        TextView textView1 = (TextView) view.findViewById(R.id.title_tv);
+        textView1.setVisibility(View.VISIBLE);
+        textView1.setTextColor(Color.WHITE);
+        textView1.setTextSize(20);
+        textView1.setText("课程列表");
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.title_toolbar);
+        toolbar.setNavigationIcon(R.mipmap.back);
+        toolbar.inflateMenu(R.menu.toolbar_menu);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_serch:
 
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     private void initView() {
@@ -184,6 +230,42 @@ public class SortActivity extends BaseShowInPagerActivity implements View.OnClic
                 myBaseDate.getData("http://www.meirixue.com", Constants.threeCourse,0);
                 break;
             case R.id.course_list_ll_Filter:
+                popur_item_two = View.inflate(MyApplication.getContext(), R.layout.popur_item_two, null);
+                popupWindow = new PopupWindow(popur_item_two, ActionBar.LayoutParams.MATCH_PARENT, 600,true);
+                popupWindow.setTouchable(true);
+                popupWindow.setOutsideTouchable(true);
+                popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                popupWindow.showAsDropDown(v);
+                mianfei = (TextView) popur_item_two.findViewById(R.id.mianfei);
+                shoufei = (TextView) popur_item_two.findViewById(R.id.shoufei);
+                mianfei.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        List<XqBean.DatalistBean> list=new ArrayList<XqBean.DatalistBean>();
+                        for (int i = 0; i < xqBean.getDatalist().size(); i++) {
+                            if(xqBean.getDatalist().get(i).getCourse_price().equals("0.00")){
+                                list.add(xqBean.getDatalist().get(i));
+                            }
+                        }
+                        xqAdapter = new XqAdapter(SortActivity.this,list);
+                        sort_class_listview.setAdapter(xqAdapter);
+                        ToastUtil.show(MyApplication.getContext(),"aaaaaaaaaaa");
+                    }
+                });
+                shoufei.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        List<XqBean.DatalistBean> list=new ArrayList<XqBean.DatalistBean>();
+                        for (int i = 0; i < xqBean.getDatalist().size(); i++) {
+                            if(!(xqBean.getDatalist().get(i).getCourse_price().equals("0.00"))){
+                                list.add(xqBean.getDatalist().get(i));
+                            }
+                        }
+                        xqAdapter = new XqAdapter(SortActivity.this,list);
+                        sort_class_listview.setAdapter(xqAdapter);
+                        ToastUtil.show(MyApplication.getContext(),"bbbbbbbbbbbbbb");
+                    }
+                });
                 break;
             case R.id.course_list_ll_sort:
                 break;

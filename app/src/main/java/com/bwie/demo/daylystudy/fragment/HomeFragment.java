@@ -5,7 +5,9 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,10 +15,13 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
 import com.bwie.demo.daylystudy.R;
-import com.bwie.demo.daylystudy.app.XiangQingActivity;
+
 import com.bwie.demo.daylystudy.adapter.CommonAdapter;
 import com.bwie.demo.daylystudy.adapter.ViewHolder;
+import com.bwie.demo.daylystudy.app.KeChengXQActivity;
+import com.bwie.demo.daylystudy.app.XiangQingActivity;
 import com.bwie.demo.daylystudy.base.BaseData;
 import com.bwie.demo.daylystudy.base.BaseFragment;
 import com.bwie.demo.daylystudy.bean.HomeBean;
@@ -39,6 +44,62 @@ import java.util.List;
  */
 
 public class HomeFragment extends BaseFragment implements SpringView.OnFreshListener{
+    private SpringView springView;
+    private HomeBean homebean;
+    private String data;
+    private LinearLayout dots_ll;
+    private LinearLayout hoem_ad_ll1;
+    private LinearLayout hoem_ad_ll2;
+    private LinearLayout home_more_1;
+    private RelativeLayout home_ad_rl;
+    private MyViewPager myViewPager;
+
+    private ImageView home_more_iv_1;
+    private ImageView home_more_iv_2;
+    private ImageView home_more_iv_3;
+    private ImageView home_more_iv_4;
+    private ImageView home_more_iv_5;
+    private ImageView home_more_iv_6;
+
+    private TextView home_more_tv_1;
+    private TextView home_more_tv_2;
+    private TextView home_more_tv_3;
+    private TextView home_more_tv_4;
+    private TextView home_more_tv_5;
+    private TextView home_more_tv_6;
+
+    private ImageView home_ad_iv1;
+    private ImageView home_ad_iv2;
+    private ImageView home_ad_iv3;
+    private TextView home_ad_tv1;
+    private TextView home_ad_tv2;
+    private TextView home_ad_tv3;
+    private TextView home_ad_tv4;
+    private TextView home_ad_tv5;
+    private TextView home_ad_tv6;
+    private RelativeLayout home_hot_Rl1;
+
+    private ImageView home_hot_iv1;
+    private TextView home_hot_title_1;
+    private TextView hot_name_1;
+
+    private ImageView home_hot_iv2;
+    private TextView home_hot_title_2;
+    private TextView hot_name_2;
+
+    private ImageView home_hot_iv3;
+    private TextView home_hot_title_3;
+    private TextView hot_name_3;
+
+    private ImageView home_hot_iv4;
+    private TextView home_hot_title_4;
+    private TextView hot_name_4;
+
+    private ImageView home_recomm_top_iv1;
+    private ImageView home_recomm_top_iv2;
+    private ListView home_recommend_lv;
+    private ListView other_listView;
+
     int[] dotArray = new int[]{R.mipmap.zaker_content_praise_press, R.mipmap.zaker_content_praise};
     //装viewpager的图片
     ArrayList<String> imgUrlList = new ArrayList<>();
@@ -53,77 +114,8 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
     ArrayList<ImageView> ivlist4= new ArrayList<>();
     ArrayList<TextView> tvlist4 = new ArrayList<>();
     List<HomeBean.DataBean.SliderBean> adl;
-    private SpringView springView;
-    private HomeBean homebean;
-    private String data;
-    private LinearLayout dots_ll;
-    private LinearLayout hoem_ad_ll1;
-    private LinearLayout hoem_ad_ll2;
-    private LinearLayout home_more_1;
-    private RelativeLayout home_ad_rl;
-    private MyViewPager myViewPager;
-    private ImageView home_more_iv_1;
-    private ImageView home_more_iv_2;
-    private ImageView home_more_iv_3;
-    private ImageView home_more_iv_4;
-    private ImageView home_more_iv_5;
-    private ImageView home_more_iv_6;
-    private TextView home_more_tv_1;
-    private TextView home_more_tv_2;
-    private TextView home_more_tv_3;
-    private TextView home_more_tv_4;
-    private TextView home_more_tv_5;
-    private TextView home_more_tv_6;
-    private ImageView home_ad_iv1;
-    private ImageView home_ad_iv2;
-    private ImageView home_ad_iv3;
-    private TextView home_ad_tv1;
-    private TextView home_ad_tv2;
-    private TextView home_ad_tv3;
-    private TextView home_ad_tv4;
-    private TextView home_ad_tv5;
-    private TextView home_ad_tv6;
-    private RelativeLayout home_hot_Rl1;
-    private ImageView home_hot_iv1;
-    private TextView home_hot_title_1;
-    private TextView hot_name_1;
-    private ImageView home_hot_iv2;
-    private TextView home_hot_title_2;
-    private TextView hot_name_2;
-    private ImageView home_hot_iv3;
-    private TextView home_hot_title_3;
-    private TextView hot_name_3;
-    private ImageView home_hot_iv4;
-    private TextView home_hot_title_4;
-    private TextView hot_name_4;
-    private ImageView home_recomm_top_iv1;
-    private ImageView home_recomm_top_iv2;
-    private ListView home_recommend_lv;
-    private ListView other_listView;
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            String str= (String) msg.obj;
-            Gson gson = new Gson();
-            homebean = gson.fromJson(str, HomeBean.class);
-
-
-            //轮播图
-            initRoolViewPager(homebean);
-//        //多彩生活
-            initDuoCai(homebean);
-//        //最强思路
-            initZuiQiang(homebean);
-//        //热门
-            initReMen(homebean);
-//        //小编
-            initXiaoBian(homebean);
-//        //大家
-            initDaJia(homebean);
-        }
-    };
     private GridView gv;
+
     private Toolbar title_toolbar;
 
     //加载数据 并根据加载的结果返回相应的状态
@@ -141,18 +133,25 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
     //执行加执行加载数据的操作
     public void initData() {
         MyBaseDate myBaseDate = new MyBaseDate();
-        myBaseDate.getData(Constants.shouye, Constants.shouye3, BaseData.NORMALTIME);
+        myBaseDate.getData(Constants.shouye, Constants.shouye3, BaseData.NORMALTIME );
     }
-
     //创建成功的视图
     @Override
     public View createSuccessView() {
         View view = initView();
         return view;
     }
-
     private void initDaJia(HomeBean homebean) {
-        List<HomeBean.DataBean.IndexothersBean> ib = homebean.getData().getIndexothers();
+        final List<HomeBean.DataBean.IndexothersBean> ib = homebean.getData().getIndexothers();
+        other_listView .setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getActivity(),KeChengXQActivity.class);
+                intent.putExtra("url",ib.get(position).getCid());
+                //  Log.i("AAAAAAA","....."+adl.get(position).getUrl());
+                getActivity().startActivity(intent);
+            }
+        });
         CommonAdapter comm = new CommonAdapter<HomeBean.DataBean.IndexothersBean>(getActivity(), ib, R.layout.lv_item) {
             @Override
             public void convert(ViewHolder helper, HomeBean.DataBean.IndexothersBean item) {
@@ -168,9 +167,27 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
 
     private void initXiaoBian(HomeBean homebean) {
         List<HomeBean.DataBean.IndexrecommendBean.TopBean> tb = homebean.getData().getIndexrecommend().getTop();
-        List<HomeBean.DataBean.IndexrecommendBean.ListviewBean> lb = homebean.getData().getIndexrecommend().getListview();
+        final List<HomeBean.DataBean.IndexrecommendBean.ListviewBean> lb = homebean.getData().getIndexrecommend().getListview();
         ivlist3.add(home_recomm_top_iv1);
         ivlist3.add(home_recomm_top_iv2);
+       /* home_recommend_lv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),KeChengXQActivity.class);
+                intent.putExtra("url",lb.get());
+                //  Log.i("AAAAAAA","....."+adl.get(position).getUrl());
+                getActivity().startActivity(intent);
+            }
+        });*/
+        home_recommend_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getActivity(),KeChengXQActivity.class);
+                intent.putExtra("url",lb.get(position).getCid());
+                //  Log.i("AAAAAAA","....."+adl.get(position).getUrl());
+                getActivity().startActivity(intent);
+            }
+        });
         for (int i = 0; i < 2; i++) {
             GLideUtils.loagNormalImg(tb.get(i).getCourse_pic(), ivlist3.get(i));
         }
@@ -212,7 +229,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
 
     //最强思路
     private void initZuiQiang(HomeBean homebean) {
-        List<HomeBean.DataBean.AdlistBean> ad = homebean.getData().getAdlist();
+        final List<HomeBean.DataBean.AdlistBean> ad = homebean.getData().getAdlist();
         ivlist.add(home_ad_iv1);
         ivlist.add(home_ad_iv2);
         ivlist.add(home_ad_iv3);
@@ -223,7 +240,15 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         tvlist.add(home_ad_tv4);
         tvlist.add(home_ad_tv5);
         tvlist.add(home_ad_tv6);
-
+        home_ad_rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),KeChengXQActivity.class);
+                intent.putExtra("url",ad.get(0).getUrl());
+                //  Log.i("AAAAAAA","....."+adl.get(position).getUrl());
+                getActivity().startActivity(intent);
+            }
+        });
         for (int i = 0; i < 3; i++) {
             GLideUtils.loagNormalImg(ad.get(i).getImg(), ivlist.get(i));
         }
@@ -272,9 +297,17 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         myViewPager.setOnPageClickListener(new MyViewPager.OnPageClickListener() {
             @Override
             public void setOnPage(int position) {
-
-                Intent intent=new Intent(getActivity(),XiangQingActivity.class);
-                getActivity().startActivity(intent);
+                if(adl.get(position).getStype().equals("5")) {
+                    Intent intent = new Intent(getActivity(), XiangQingActivity.class);
+                    intent.putExtra("url", adl.get(position).getUrl() + "");
+                    Log.i("AAAAAAA", "....." + adl.get(position).getUrl());
+                    getActivity().startActivity(intent);
+                }else if(adl.get(position).getStype().equals("1")){
+                    Intent intent = new Intent(getActivity(), KeChengXQActivity.class);
+                    intent.putExtra("url", adl.get(position).getUrl() + "");
+                    Log.i("AAAAAAA", "....." + adl.get(position).getUrl());
+                    getActivity().startActivity(intent);
+                }
             }
         });
     }
@@ -297,7 +330,6 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         }
 
     }
-
     private View initView() {
         View view = CommonUtil.inflate(R.layout.homefragment);
         //shangalaxiaal
@@ -335,6 +367,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
 
         //最强
         home_ad_rl = (RelativeLayout) view.findViewById(R.id.home_ad_rl);
+
         home_ad_iv1 = (ImageView) view.findViewById(R.id.home_ad_iv1);
         home_ad_tv2 = (TextView) view.findViewById(R.id.home_ad_tv2);
         home_ad_tv1 = (TextView) view.findViewById(R.id.home_ad_tv1);
@@ -369,12 +402,13 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
         home_recomm_top_iv1 = (ImageView) view.findViewById(R.id.home_recomm_top_iv1);
         home_recomm_top_iv2 = (ImageView) view.findViewById(R.id.home_recomm_top_iv2);
         home_recommend_lv = (ListView) view.findViewById(R.id.home_recommend_lv);
+
         //大家
+
         other_listView = (ListView) view.findViewById(R.id.other_listView);
         return view;
 
     }
-
     @Override
     public void onRefresh() {
         springView.onFinishFreshAndLoad();
@@ -384,7 +418,6 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
     public void onLoadmore() {
 
     }
-
     //设置标题栏
     @Override
     public void setTitleView(View view) {
@@ -408,9 +441,7 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
                 Message msg = Message.obtain();
                 msg.obj = data;
                 handler.sendMessage(msg);
-
                 HomeFragment.this.data = data;
-      // ToastUtil.show(getActivity(), data);
             }
         }
 
@@ -422,4 +453,25 @@ public class HomeFragment extends BaseFragment implements SpringView.OnFreshList
             }
         }
     }
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            String str= (String) msg.obj;
+            Gson gson = new Gson();
+            homebean = gson.fromJson(str, HomeBean.class);
+            //轮播图
+            initRoolViewPager(homebean);
+//        //多彩生活
+            initDuoCai(homebean);
+//        //最强思路
+            initZuiQiang(homebean);
+//        //热门
+            initReMen(homebean);
+//        //小编
+            initXiaoBian(homebean);
+//        //大家
+            initDaJia(homebean);
+        }
+    };
 }
